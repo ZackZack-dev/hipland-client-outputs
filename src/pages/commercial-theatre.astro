@@ -2,58 +2,88 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Commercial Theatre" description="Precision sound for Australia's most demanding theatre productions. Full-service audio for professional musical theatre from System Sound.">
-  <section class="page-header">
+<BaseLayout title="Commercial Theatre" description="Precision sound for Australia's most demanding theatre productions. Full-service audio for professional musical theatre. System design, crew, equipment, and support from System Sound.">
+  <section class="page-head">
     <div class="container">
-      <p class="section-label">Commercial Theatre</p>
-      <h1>Precision sound for Australia's most <span style="color:var(--color-accent)">demanding</span> productions.</h1>
-      <p>Full-service audio for professional musical theatre. System design, crew, equipment, and unwavering support from consultation to final curtain.</p>
+      <div class="section-num">Commercial Theatre</div>
+      <h1 class="hero-headline" style="font-size:clamp(3.5rem, 8vw, 8rem)">Precision<br />sound for<br /><span style="color:var(--gold)">demanding</span><br />productions</h1>
+      <p class="body-text body-lg" style="margin-top:2rem">Full-service audio for professional musical theatre. System design, crew, equipment, and unwavering support from consultation to final curtain.</p>
     </div>
   </section>
 
-  <section class="content-section">
-    <div class="container">
-      <div class="prose">
-        <p>System Sound specialises in delivering world-class audio for commercial musical theatre. From intimate performance spaces to touring productions, we bring 45+ years of industry experience, engineering pedigree, and a deep understanding of theatrical storytelling.</p>
-        <p>With roots in Australia's golden age of commercial theatre — and decades of experience across Evita, Phantom of the Opera, Chicago, The Rocky Horror Show, Wicked, Moulin Rouge and more — we understand what productions need long before they hit the stage.</p>
-        <p>Whether a production requires full system design, crew, equipment hire, or emergency technical support, we provide an end-to-end audio service that upholds the highest standards in the industry.</p>
+  <div class="rule"></div>
 
-        <h2>A Theatre-First Approach</h2>
-        <p>Musical theatre has unique challenges — tight budgets, tight schedules, dynamic range, orchestral clarity, and the need to translate emotion into the back row without fatigue. System Sound approaches every show with a theatre-first mindset:</p>
-        <ul>
-          <li><strong>Bespoke and thoughtful system design for each venue</strong> — ensuring not only efficient bump-ins but perfect sound in every seat.</li>
-          <li><strong>Unmatched communications and support</strong> from consultation to completion — we're a phone call away from creating genuine solutions to whatever challenges a production may face.</li>
-          <li><strong>Long-standing relationships with key industry stakeholders</strong> — across Australia we have a rich network of support services, crew, technical services and venue contacts.</li>
-          <li><strong>Perfectly maintained and world-class equipment</strong> — our cutting edge technology and industry-leading investment in the latest technology allow us to meet the needs of any production.</li>
-          <li><strong>Meeting the expectations of international designers and producers</strong> — we have experience surpassing the expectations of some of the most respected and prolific design teams from Broadway and the West End.</li>
-        </ul>
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="align-items:start">
+        <div>
+          <div class="section-num">01 / Mindset</div>
+          <h2 class="section-headline" style="font-size:clamp(1.8rem, 3vw, 2.5rem); margin-top:0.5rem">A theatre-<br />first<br />approach</h2>
+        </div>
+        <div>
+          <p class="body-text">Musical theatre has unique challenges — tight budgets, tight schedules, dynamic range, orchestral clarity, and the need to translate emotion into the back row without fatigue. System Sound approaches every show with a theatre-first mindset.</p>
+        </div>
+      </div>
+
+      <div class="card-grid" style="margin-top:3rem">
+        <div class="card">
+          <span class="card-num">01</span>
+          <h4 class="card-title">System Design</h4>
+          <p class="card-desc">Bespoke and thoughtful system design for each venue — ensuring not only efficient bump-ins but perfect sound in every seat.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">02</span>
+          <h4 class="card-title">Communications & Support</h4>
+          <p class="card-desc">Unmatched communications from consultation to completion. We're a phone call away from creating genuine solutions to whatever challenges a production may face.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">03</span>
+          <h4 class="card-title">Industry Relationships</h4>
+          <p class="card-desc">Long-standing relationships with key industry stakeholders across Australia — a rich network of support services, crew, technical services and venue contacts.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">04</span>
+          <h4 class="card-title">World-Class Equipment</h4>
+          <p class="card-desc">Perfectly maintained equipment. Cutting edge technology and industry-leading investment in the latest tools to meet the needs of any production.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">05</span>
+          <h4 class="card-title">International Standards</h4>
+          <p class="card-desc">Experience surpassing the expectations of some of the most respected and prolific design teams from Broadway and the West End.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section section-alt">
+  <div class="rule"></div>
+
+  <section class="section">
     <div class="container">
-      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))">
-        <div class="card">
-          <h3>Full Sound System Design & Consulting</h3>
-          <p>We design bespoke systems for new productions, long-running shows, and redevelopments. Includes coverage prediction, system architecture, rigging design, networking, gain structure, RF planning, and FOH workflow.</p>
+      <div class="section-num">02 / Services</div>
+      <div class="grid-2">
+        <div>
+          <div class="stat-val" style="font-size:1.5rem; margin-bottom:0.5rem">System Design & Consulting</div>
+          <p class="card-desc">Bespoke systems for new productions, long-running shows, and redevelopments. Coverage prediction, system architecture, rigging design, networking, gain structure, RF planning, and FOH workflow.</p>
         </div>
-        <div class="card">
-          <h3>Show Operation & Crew</h3>
-          <p>Our team of theatre-trained engineers brings decades of experience. We can provide: FOH operators, RF technicians, A2/A3 support crew, bump-in/bump-out technical teams, touring support and swings.</p>
+        <div>
+          <div class="stat-val" style="font-size:1.5rem; margin-bottom:0.5rem">Show Operation & Crew</div>
+          <p class="card-desc">Theatre-trained engineers with decades of experience. FOH operators, RF technicians, A2/A3 support crew, bump-in/bump-out technical teams, touring support and swings.</p>
         </div>
-        <div class="card">
-          <h3>Venue Upgrades & Installation</h3>
-          <p>With 45+ years of experience and quality relationships with equipment suppliers — as well as being direct distributors of some of the world's best brands — we offer the ability to partner with venues in upgrading and customising their sound technology facilities.</p>
+        <div style="margin-top:2rem">
+          <div class="stat-val" style="font-size:1.5rem; margin-bottom:0.5rem">Venue Upgrades & Installation</div>
+          <p class="card-desc">Partner with venues to upgrade and customise sound technology. 45+ years of experience. Direct distributor pricing on Meyer Sound, DiGiCo, Sennheiser, and more.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="cta-section">
+  <div class="rule"></div>
+
+  <section class="cta-block">
     <div class="container">
-      <h2>Planning a production?</h2>
-      <p>Let's talk about what you need. No obligation, just genuine expertise.</p>
+      <div class="section-num">03 / Start</div>
+      <h2 class="display-md">Planning<br />a production?</h2>
+      <p class="body-text" style="margin:0 auto 2.5rem">Let's talk about what you need. No obligation, just genuine expertise.</p>
       <a href="/sales-enquiry-request" class="btn btn-primary">Start the conversation</a>
     </div>
   </section>

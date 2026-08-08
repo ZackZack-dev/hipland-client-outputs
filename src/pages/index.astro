@@ -1,133 +1,182 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE, PRODUCTIONS, SERVICES } from '../data/site';
+import { SITE, PRODUCTIONS, SERVICES, EQUIPMENT_CATEGORIES } from '../data/site';
 
 const pageTitle = `${SITE.name} — ${SITE.tagline}`;
 ---
 
 <BaseLayout title={pageTitle} description={SITE.description}>
+
+  <!-- ===== HERO — Typography-first, cinematic depth ===== -->
   <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <p class="hero-eyebrow">Sound Design &middot; Engineering &middot; Equipment Hire</p>
-        <h1>Behind <span>Australia's</span> biggest shows. <span>Since 1979.</span></h1>
-        <p>We design, supply and operate the audio behind Australia's flagship musicals, concerts and live events — and for the schools, venues and productions coming up behind them. If it has to sound right in front of an audience, it's what we do.</p>
-        <div class="hero-buttons">
-          <a href="/sales-enquiry-request" class="btn btn-primary">Tell us about your project</a>
-          <a href="/commercial-theatre" class="btn btn-outline">Our Work</a>
+    <div class="hero-bg"></div>
+    <div class="container" style="width:100%">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-label">Sound Design & Engineering / Est. 1979 / Melbourne AU</div>
+          <h1 class="hero-headline">
+            Behind<br />the <span class="accent">sound</span><br />of Australia
+          </h1>
+          <p class="hero-sub">
+            Full-service audio for commercial theatre, live events, and permanent installations. Direct Meyer Sound distributor.
+          </p>
+          <div class="hero-meta">
+            <div><span class="meta-val">45+</span>Years</div>
+            <div><span class="meta-val">100+</span>Productions</div>
+            <div><span class="meta-val">Aus</span>Owned</div>
+          </div>
         </div>
       </div>
     </div>
+    <!-- Corner nav (FRAME reference) -->
+    <div class="corner-nav corner-br">
+      <a href="/sales-enquiry-request">Enquire →</a>
+    </div>
+    <div class="corner-nav corner-bl">
+      Melbourne / Brisbane / Asia-Pacific
+    </div>
   </section>
 
-  <!-- Production Credits Strip -->
-  <div class="credit-strip">
-    <div class="credit-strip-inner">
-      {PRODUCTIONS.slice(0, 8).map(p => <span class="credit-item">{p}</span>)}
+  <!-- ===== PRODUCTION STRIP ===== -->
+  <div class="production-strip">
+    <div class="container">
+      <span class="mono-label">Selected Credits</span>
+      <div class="strip-scroll">
+        {PRODUCTIONS.slice(0, 10).map(p => <span>{p}</span>)}
+      </div>
     </div>
   </div>
 
-  <!-- Services -->
+  <!-- ===== SERVICES — 01 ===== -->
   <section class="section">
     <div class="container">
-      <p class="section-label">What We Do</p>
-      <div class="section-intro">
-        <h2>World-class audio for every stage.</h2>
-        <p>From Broadway-scale musicals to intimate venue installations, we bring the same meticulous planning, intelligent design and flawless execution to every project.</p>
-      </div>
-      <div class="card-grid">
-        {SERVICES.map(service => (
+      <div class="section-num">01 / Services</div>
+      <h2 class="section-headline">What<br />we do</h2>
+      <p class="section-body">World-class audio for theatre, live events, venues, and education. Same meticulous planning, intelligent design, and flawless execution — whatever the scale.</p>
+
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))">
+        {SERVICES.map((service, i) => (
           <a href={service.href} class="card">
-            <div class="card-icon">{service.icon}</div>
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
-            <span class="card-link">Learn more →</span>
+            <span class="card-num">{(i + 1).toString().padStart(2, '0')}</span>
+            <h3 class="card-title">{service.title}</h3>
+            <p class="card-desc">{service.description}</p>
+            <span class="card-link">Explore →</span>
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Why System Sound -->
-  <section class="section section-alt">
-    <div class="container">
-      <p class="section-label">Why System Sound</p>
-      <div class="section-intro">
-        <h2>Australian owned. Internationally trusted.</h2>
-      </div>
-      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))">
-        <div class="card">
-          <h3>45+ Years</h3>
-          <p>Founded in 1979 by John Scandrett. Second-generation family leadership with deep engineering pedigree.</p>
-        </div>
-        <div class="card">
-          <h3>Direct Meyer Sound Distributor</h3>
-          <p>One of Australia's largest Meyer Sound stockists. Direct sales, expert installation, and ongoing support.</p>
-        </div>
-        <div class="card">
-          <h3>Theatre-First Mindset</h3>
-          <p>We understand the daily realities of theatre — tight schedules, dynamic range, emotion in the back row.</p>
-        </div>
-        <div class="card">
-          <h3>Australia-Wide</h3>
-          <p>Engineering productions from Melbourne to Brisbane, Sydney to Perth, and internationally into the Asia-Pacific.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="rule"></div>
 
-  <!-- Featured Production -->
+  <!-- ===== WHY — 02 ===== -->
   <section class="section">
     <div class="container">
-      <div class="case-study">
-        <div class="case-study-content">
-          <p class="section-label">Featured</p>
-          <h3>Book of Mormon — Brisbane Season</h3>
-          <p>System Sound provides the full audio package for the acclaimed Australian production of Book of Mormon, featuring a complete Meyer Sound system, DiGiCo consoles, and Sennheiser wireless. Sound design by David Greasley, now running at QPAC Brisbane.</p>
-          <div class="stat-grid">
-            <div class="stat-item"><div class="stat-number">100+</div><div class="stat-label">Wireless Channels</div></div>
-            <div class="stat-item"><div class="stat-number">Meyer</div><div class="stat-label">Leopard System</div></div>
-            <div class="stat-item"><div class="stat-number">DiGiCo</div><div class="stat-label">Quantum Console</div></div>
-          </div>
-          <a href="/commercial-theatre" class="btn btn-outline btn-sm" style="margin-top:1rem">More productions →</a>
+      <div class="section-num">02 / Why System Sound</div>
+      <h2 class="section-headline">Australian<br />owned.<br />Internationally<br />trusted.</h2>
+
+      <div class="grid-4" style="margin-top:3rem">
+        <div>
+          <div class="stat-val">45+</div>
+          <div class="stat-lbl">Years of engineering excellence</div>
+          <p class="card-desc" style="margin-top:0.75rem">Founded 1979 by John Scandrett. Second-generation family leadership.</p>
         </div>
-        <div class="case-study-image">
-          🎭 Book of Mormon at QPAC
+        <div>
+          <div class="stat-val">Meyer</div>
+          <div class="stat-lbl">Direct distributor, Australia</div>
+          <p class="card-desc" style="margin-top:0.75rem">One of the largest Meyer Sound stockists in the country. Sales, install, support.</p>
+        </div>
+        <div>
+          <div class="stat-val">100+</div>
+          <div class="stat-lbl">Major productions</div>
+          <p class="card-desc" style="margin-top:0.75rem">From Broadway-scale musicals to international concert tours.</p>
+        </div>
+        <div>
+          <div class="stat-val">RF</div>
+          <div class="stat-lbl">Wireless specialists</div>
+          <p class="card-desc" style="margin-top:0.75rem">Industry-leading RF coordination, intermodulation analysis, and wireless system design.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Press -->
-  <section class="section section-alt">
+  <div class="rule"></div>
+
+  <!-- ===== CASE STUDY — 03 (FRAME-style cinematic) ===== -->
+  <section class="section">
     <div class="container">
-      <p class="section-label">In the Press</p>
-      <div class="section-intro">
-        <h2>Trusted by the industry.</h2>
+      <div class="section-num">03 / Featured Work</div>
+
+      <div class="case-study">
+        <div class="case-media">
+          <span class="case-media-label">Production / Book of Mormon</span>
+          <span style="font-family:var(--font-display);font-size:3rem;font-weight:900;text-transform:uppercase;color:var(--gold);opacity:0.3;">BOM</span>
+        </div>
+        <div class="case-content">
+          <h3 class="case-title">Book of<br />Mormon</h3>
+          <p class="body-text">Full audio package for the acclaimed Australian production at QPAC Brisbane. Meyer Sound Leopard system, DiGiCo Quantum console, 100+ channels of Sennheiser Digital 6000 wireless. Sound Design by David Greasley.</p>
+          <div class="stat-row">
+            <div><div class="stat-val">100+</div><div class="stat-lbl">Wireless Channels</div></div>
+            <div><div class="stat-val">Meyer</div><div class="stat-lbl">Leopard System</div></div>
+            <div><div class="stat-val">DiGiCo</div><div class="stat-lbl">Quantum Console</div></div>
+          </div>
+          <a href="/case-studies" class="btn" style="margin-top:1rem">View Case Studies →</a>
+        </div>
       </div>
-      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))">
+    </div>
+  </section>
+
+  <!-- ===== EQUIPMENT — 04 ===== -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-num">04 / Equipment</div>
+      <h2 class="section-headline" style="font-size:clamp(2rem, 4vw, 4rem)">Hire & Sales</h2>
+      <p class="section-body">Premium audio inventory. Meyer Sound, DiGiCo, Sennheiser, Shure, Allen & Heath, Yamaha. Direct pricing on sales. Professionally maintained for hire.</p>
+
+      <div class="equip-grid">
+        {EQUIPMENT_CATEGORIES.slice(0, 8).map((cat, i) => (
+          <a href={`/equipment/${cat.slug}`} class="equip-card">
+            <span class="equip-icon">{cat.icon}</span>
+            <span class="equip-name">{cat.name}</span>
+            <span class="equip-count">{cat.count}</span>
+          </a>
+        ))}
+      </div>
+      <div style="margin-top:2rem">
+        <a href="/equipment" class="btn">Full Equipment List →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRESS — 05 ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-num">05 / Press & Recognition</div>
+      <div class="testimonial-grid" style="grid-template-columns: repeat(auto-fill, minmax(340px, 1fr))">
         <div class="testimonial">
           <blockquote>"System Sound's switch from L'Acoustics to Meyer Sound for Book of Mormon demonstrates why they're at the cutting edge of theatrical sound reinforcement."</blockquote>
           <cite><strong>CX Network</strong> Converting with The Book of Mormon</cite>
         </div>
         <div class="testimonial">
           <blockquote>"David Greasley's brilliant Sound Design — a masterclass in both musical theatre sound and in the full utilisation of Meyer Sound, Sennheiser and DiGiCo flagship equipment."</blockquote>
-          <cite><strong>Sunset Boulevard</strong> Asia Tour</cite>
+          <cite><strong>Sunset Boulevard</strong> Asia Tour Press</cite>
         </div>
         <div class="testimonial">
-          <blockquote>"One of Australia's most recognisable and historic sound companies… built on technical excellence, commitment to quality and technical innovation."</blockquote>
+          <blockquote>"One of Australia's most recognisable and historic sound companies — built on technical excellence, commitment to quality and technical innovation."</blockquote>
           <cite><strong>Audio Technology Magazine</strong> Sound for Sunset Boulevard</cite>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-section">
+  <!-- ===== CTA — 06 ===== -->
+  <section class="cta-block">
     <div class="container">
-      <h2>Let's talk about your production.</h2>
-      <p>Whether it's a major musical, a school production, a venue upgrade, or a one-off event — we're ready to help.</p>
+      <div class="section-num">06 / Start</div>
+      <h2 class="display-md">Let's talk about<br />your production</h2>
+      <p class="body-text" style="margin:0 auto 2.5rem">Theatre, venue install, school production, or one-off event. No obligation — genuine expertise.</p>
       <a href="/sales-enquiry-request" class="btn btn-primary">Start a conversation</a>
     </div>
   </section>
+
 </BaseLayout>

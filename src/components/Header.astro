@@ -1,17 +1,16 @@
 ---
-import { SITE, NAV } from '../data/site';
+import { NAV } from '../data/site';
 const currentPath = Astro.url.pathname;
 ---
 
 <header class="site-header">
   <div class="header-inner">
     <a href="/" class="logo">
-      System <span>Sound</span>
-      <small>Since 1979</small>
+      System<span class="logo-accent">Sound</span>
     </a>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">☰</button>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">+</button>
     <nav>
-      <ul class="nav-links" id="navLinks">
+      <ul class="nav-list" id="navList">
         {NAV.map(item => (
           <li class={item.href === '/sales-enquiry-request' ? 'nav-cta' : ''}>
             <a
@@ -29,6 +28,6 @@ const currentPath = Astro.url.pathname;
 
 <script>
   document.getElementById('mobileToggle')?.addEventListener('click', () => {
-    document.getElementById('navLinks')?.classList.toggle('open');
+    document.getElementById('navList')?.classList.toggle('open');
   });
 </script>

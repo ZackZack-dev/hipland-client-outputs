@@ -1,83 +1,94 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE } from '../data/site';
+import { PRODUCTIONS } from '../data/site';
 ---
 
-<BaseLayout title="About Us" description="System Sound is one of Australia's most recognisable and historic sound companies. Founded in 1979 by John Scandrett. Learn about our history, team, and approach.">
-  <section class="page-header">
+<BaseLayout title="About Us" description="System Sound — one of Australia's most recognisable sound companies. Founded 1979 by John Scandrett. 45+ years of technical excellence in theatre audio.">
+  <section class="page-head">
     <div class="container">
-      <p class="section-label">About Us</p>
-      <h1>Sound engineering since <span style="color:var(--color-accent)">1979</span>.</h1>
-      <p>One of Australia's most recognisable and historic sound companies. Built on technical excellence, commitment to quality, and genuine care for every production.</p>
+      <div class="section-num">About</div>
+      <h1 class="hero-headline" style="font-size:clamp(3.5rem, 8vw, 8rem)">Sound<br />engineering<br />since <span style="color:var(--gold)">1979</span></h1>
+      <p class="body-text body-lg" style="margin-top:2rem">One of Australia's most recognisable and historic sound companies. Built on technical excellence, commitment to quality, and genuine care for every production.</p>
     </div>
   </section>
 
-  <section class="content-section">
+  <div class="rule"></div>
+
+  <section class="section">
     <div class="container">
-      <div class="prose">
-        <h2>Our Story</h2>
-        <p>System Sound was founded in 1979 by owner and managing director John Scandrett. The company was built on technical excellence, commitment to quality and technical innovation. Our history spans back to the prolific JC Williamson Theatre Company, where John Scandrett worked as one of Australia's first theatre sound designers until the company's eventual collapse in 1978.</p>
-        <p>As a recently graduated physicist with a passion for electronics and as a violinist in a chamber orchestra, John was uniquely skilled to meet the requirements of theatrical sound reinforcement. Over the years which followed, the team he built — as the company took on more and more technically ambitious and challenging projects — set System Sound to become not just the go-to name for high quality theatrical products, but for all events requiring world class sound engineering and infallible commitment to successful productions.</p>
-        <p>By the 2000s, we had designed and provided sound for hundreds of productions and events, some of which — like The Phantom of the Opera and the Hong Kong Handover of 1997 — defined an era of exponential expansion in both technical innovation in sound and the development of live entertainment productions themselves.</p>
-
-        <h2>Who We Are Now</h2>
-        <p>With a curated team of talented and experienced engineers, designers and facility staff, and now a generational collection of professional experience behind us, we stand at the forefront of delivering high value sound engineering services to our many clients and customers across Australia.</p>
-
-        <h2>Our Approach</h2>
-        <p>At System Sound, our uncompromising approach to service is what sets us apart. Meticulous planning and seamless execution minimise downtime, enabling fast, well-ordered turnarounds on every job, big or small.</p>
-        <p>We understand the daily realities of theatre and the demands of long-term performance, and we can be genuinely budget-accommodating while mindful of preserving quality and reliability.</p>
-        <p>We empower local designers and production teams with best-in-class tools and technology — including Meyer Sound loudspeakers and control systems — so we can approach any project, of any size, with the same enthusiasm and deliver a top-tier, seamless result.</p>
-        <p>From school musicals to roadshows, training sessions to activations, long-term installations to some of the biggest theatre productions in the world — we service them all with equal energy. And if we don't have the exact equipment you need, we'll source it for you. Our clients' needs and expectations are met with quality solutions, and their satisfaction is our priority.</p>
+      <div class="section-num">01 / Story</div>
+      <div class="grid-2">
+        <div>
+          <p class="body-text">System Sound was founded in 1979 by owner and managing director John Scandrett. The company was built on technical excellence, commitment to quality and technical innovation. Our history spans back to the prolific JC Williamson Theatre Company, where John Scandrett worked as one of Australia's first theatre sound designers.</p>
+        </div>
+        <div>
+          <p class="body-text">As a recently graduated physicist with a passion for electronics and as a violinist in a chamber orchestra, John was uniquely skilled to meet the requirements of theatrical sound reinforcement. Over the years, the team he built set System Sound to become the go-to name for high quality theatrical products and all events requiring world class sound engineering.</p>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Production Credits -->
-  <section class="section section-alt">
-    <div class="container">
-      <p class="section-label">Credits</p>
-      <div class="section-intro">
-        <h2>Productions we've been part of.</h2>
-      </div>
-      <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr))">
-        <div class="card"><h4>The Book of Mormon</h4><p style="font-size:0.85rem">Australian & Asia-Pacific seasons</p></div>
-        <div class="card"><h4>Moulin Rouge</h4><p style="font-size:0.85rem">Australian production</p></div>
-        <div class="card"><h4>Sunset Boulevard</h4><p style="font-size:0.85rem">Australia & Asia Tour</p></div>
-        <div class="card"><h4>Phantom of the Opera</h4><p style="font-size:0.85rem">World Tour</p></div>
-        <div class="card"><h4>Cats</h4><p style="font-size:0.85rem">Australian seasons</p></div>
-        <div class="card"><h4>Evita</h4><p style="font-size:0.85rem">Australian production</p></div>
-        <div class="card"><h4>Wicked</h4><p style="font-size:0.85rem">Australian season</p></div>
-        <div class="card"><h4>Jersey Boys</h4><p style="font-size:0.85rem">Australian production</p></div>
-        <div class="card"><h4>Matilda The Musical</h4><p style="font-size:0.85rem">Australian production</p></div>
-        <div class="card"><h4>Kinky Boots</h4><p style="font-size:0.85rem">Australian production</p></div>
-        <div class="card"><h4>Chicago</h4><p style="font-size:0.85rem">Australian season</p></div>
-        <div class="card"><h4>Les Misérables</h4><p style="font-size:0.85rem">Australian production</p></div>
-        <div class="card"><h4>School of Rock</h4><p style="font-size:0.85rem">Australian production</p></div>
-        <div class="card"><h4>Rent</h4><p style="font-size:0.85rem">Opera Australia, Sydney Opera House</p></div>
-        <div class="card"><h4>In The Heights</h4><p style="font-size:0.85rem">Melbourne season</p></div>
-        <div class="card"><h4>Billy Elliot</h4><p style="font-size:0.85rem">Australian production</p></div>
-      </div>
-      <p style="text-align:center; margin-top:2rem; color:var(--color-text-muted); font-size:0.9rem">
-        Plus: Miss Saigon, Chitty Chitty Bang Bang, King Kong, Legally Blonde, Love Never Dies, Mamma Mia, Rock of Ages, The Addams Family, We Will Rock You, War Horse, Strictly Ballroom, The Production Company, and many more.
+      <div class="rule" style="margin-top:3rem"></div>
+      <p class="body-text body-lg" style="margin-top:3rem; max-width:60ch">
+        By the 2000s, we had designed and provided sound for hundreds of productions and events, some of which — like The Phantom of the Opera and the Hong Kong Handover of 1997 — defined an era of exponential expansion in technical innovation and the development of live entertainment itself.
       </p>
     </div>
   </section>
 
-  <!-- Orchestral -->
+  <div class="rule"></div>
+
   <section class="section">
     <div class="container">
-      <div class="prose">
-        <h2>Concerts & Symphonic</h2>
-        <p>System Sound specialises in orchestral sound reinforcement and works with the Hong Kong Philharmonic, KBS Orchestra (Seoul), The Singapore Symphony, Orchestra Victoria, the Australian Pops Orchestra, The Sydney Opera House, The Arts Centre Melbourne, and other well-founded cultural institutions.</p>
-        <p>Large scale event Sound Design and Engineering projects include the Hong Kong and Macau Handovers, Melbourne's Millennium New Year's Eve Celebrations, many stadium and outdoor concerts throughout Australia, Asia and New Zealand, with Dame Kiri Te Kanawa, José Carreras, Plácido Domingo, Andrea Bocelli, and Luciano Pavarotti, and "Mahler's Symphony of a Thousand" for the Sydney 2000 Olympic Arts Festival.</p>
+      <div class="section-num">02 / Approach</div>
+      <h2 class="section-headline">How<br />we work</h2>
+      <div class="grid-2" style="margin-top:2.5rem">
+        <div>
+          <p class="body-text">Our uncompromising approach to service is what sets us apart. Meticulous planning and seamless execution minimise downtime, enabling fast, well-ordered turnarounds on every job, big or small. We understand the daily realities of theatre and the demands of long-term performance.</p>
+        </div>
+        <div>
+          <p class="body-text">We empower local designers and production teams with best-in-class tools and technology — including Meyer Sound loudspeakers and control systems — to approach any project with the same enthusiasm and deliver a top-tier, seamless result. From school musicals to the biggest theatre productions in the world — we service them all with equal energy.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="cta-section">
+  <div class="rule"></div>
+
+  <section class="section">
     <div class="container">
-      <h2>Work with us.</h2>
-      <p>Talk to us about your next production. We'd love to hear what you're working on.</p>
+      <div class="section-num">03 / Credits</div>
+      <h2 class="section-headline" style="font-size:clamp(2rem, 4vw, 4rem)">Productions<br />we've been<br />part of</h2>
+      <div class="card-grid" style="margin-top:2.5rem">
+        {PRODUCTIONS.map((p, i) => (
+          <div class="card">
+            <span class="card-num">{(i + 1).toString().padStart(2, '0')}</span>
+            <h4 class="card-title" style="font-size:1.1rem">{p}</h4>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-num">04 / Orchestral & Symphonic</div>
+      <div class="grid-2">
+        <div>
+          <p class="body-text">System Sound specialises in orchestral sound reinforcement and works with the Hong Kong Philharmonic, KBS Orchestra (Seoul), The Singapore Symphony, Orchestra Victoria, the Australian Pops Orchestra, The Sydney Opera House, The Arts Centre Melbourne.</p>
+        </div>
+        <div>
+          <p class="body-text">Large scale projects include the Hong Kong and Macau Handovers, Melbourne's Millennium New Year's Eve Celebrations, and stadium concerts with Dame Kiri Te Kanawa, José Carreras, Plácido Domingo, Andrea Bocelli, and Luciano Pavarotti.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section class="cta-block">
+    <div class="container">
+      <div class="section-num">05 / Connect</div>
+      <h2 class="display-md">Work<br />with us</h2>
+      <p class="body-text" style="margin:0 auto 2.5rem">Talk to us about your next production. We'd love to hear what you're working on.</p>
       <a href="/sales-enquiry-request" class="btn btn-primary">Get in touch</a>
     </div>
   </section>
