@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, PRODUCTIONS, SERVICES } from '../data/site';
+
+const pageTitle = `${SITE.name} — ${SITE.tagline}`;
+---
+
+<BaseLayout title={pageTitle} description={SITE.description}>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Sound Design &middot; Engineering &middot; Equipment Hire</p>
+        <h1>Behind <span>Australia's</span> biggest shows. <span>Since 1979.</span></h1>
+        <p>We design, supply and operate the audio behind Australia's flagship musicals, concerts and live events — and for the schools, venues and productions coming up behind them. If it has to sound right in front of an audience, it's what we do.</p>
+        <div class="hero-buttons">
+          <a href="/sales-enquiry-request" class="btn btn-primary">Tell us about your project</a>
+          <a href="/commercial-theatre" class="btn btn-outline">Our Work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Production Credits Strip -->
+  <div class="credit-strip">
+    <div class="credit-strip-inner">
+      {PRODUCTIONS.slice(0, 8).map(p => <span class="credit-item">{p}</span>)}
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section class="section">
+    <div class="container">
+      <p class="section-label">What We Do</p>
+      <div class="section-intro">
+        <h2>World-class audio for every stage.</h2>
+        <p>From Broadway-scale musicals to intimate venue installations, we bring the same meticulous planning, intelligent design and flawless execution to every project.</p>
+      </div>
+      <div class="card-grid">
+        {SERVICES.map(service => (
+          <a href={service.href} class="card">
+            <div class="card-icon">{service.icon}</div>
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+            <span class="card-link">Learn more →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why System Sound -->
+  <section class="section section-alt">
+    <div class="container">
+      <p class="section-label">Why System Sound</p>
+      <div class="section-intro">
+        <h2>Australian owned. Internationally trusted.</h2>
+      </div>
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))">
+        <div class="card">
+          <h3>45+ Years</h3>
+          <p>Founded in 1979 by John Scandrett. Second-generation family leadership with deep engineering pedigree.</p>
+        </div>
+        <div class="card">
+          <h3>Direct Meyer Sound Distributor</h3>
+          <p>One of Australia's largest Meyer Sound stockists. Direct sales, expert installation, and ongoing support.</p>
+        </div>
+        <div class="card">
+          <h3>Theatre-First Mindset</h3>
+          <p>We understand the daily realities of theatre — tight schedules, dynamic range, emotion in the back row.</p>
+        </div>
+        <div class="card">
+          <h3>Australia-Wide</h3>
+          <p>Engineering productions from Melbourne to Brisbane, Sydney to Perth, and internationally into the Asia-Pacific.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Production -->
+  <section class="section">
+    <div class="container">
+      <div class="case-study">
+        <div class="case-study-content">
+          <p class="section-label">Featured</p>
+          <h3>Book of Mormon — Brisbane Season</h3>
+          <p>System Sound provides the full audio package for the acclaimed Australian production of Book of Mormon, featuring a complete Meyer Sound system, DiGiCo consoles, and Sennheiser wireless. Sound design by David Greasley, now running at QPAC Brisbane.</p>
+          <div class="stat-grid">
+            <div class="stat-item"><div class="stat-number">100+</div><div class="stat-label">Wireless Channels</div></div>
+            <div class="stat-item"><div class="stat-number">Meyer</div><div class="stat-label">Leopard System</div></div>
+            <div class="stat-item"><div class="stat-number">DiGiCo</div><div class="stat-label">Quantum Console</div></div>
+          </div>
+          <a href="/commercial-theatre" class="btn btn-outline btn-sm" style="margin-top:1rem">More productions →</a>
+        </div>
+        <div class="case-study-image">
+          🎭 Book of Mormon at QPAC
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Press -->
+  <section class="section section-alt">
+    <div class="container">
+      <p class="section-label">In the Press</p>
+      <div class="section-intro">
+        <h2>Trusted by the industry.</h2>
+      </div>
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))">
+        <div class="testimonial">
+          <blockquote>"System Sound's switch from L'Acoustics to Meyer Sound for Book of Mormon demonstrates why they're at the cutting edge of theatrical sound reinforcement."</blockquote>
+          <cite><strong>CX Network</strong> Converting with The Book of Mormon</cite>
+        </div>
+        <div class="testimonial">
+          <blockquote>"David Greasley's brilliant Sound Design — a masterclass in both musical theatre sound and in the full utilisation of Meyer Sound, Sennheiser and DiGiCo flagship equipment."</blockquote>
+          <cite><strong>Sunset Boulevard</strong> Asia Tour</cite>
+        </div>
+        <div class="testimonial">
+          <blockquote>"One of Australia's most recognisable and historic sound companies… built on technical excellence, commitment to quality and technical innovation."</blockquote>
+          <cite><strong>Audio Technology Magazine</strong> Sound for Sunset Boulevard</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Let's talk about your production.</h2>
+      <p>Whether it's a major musical, a school production, a venue upgrade, or a one-off event — we're ready to help.</p>
+      <a href="/sales-enquiry-request" class="btn btn-primary">Start a conversation</a>
+    </div>
+  </section>
+</BaseLayout>

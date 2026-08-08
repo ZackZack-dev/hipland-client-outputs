@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { EQUIPMENT_CATEGORIES } from '../data/site';
+---
+
+<BaseLayout title="Equipment Hire" description="Hire premium sound equipment from System Sound. Speakers, mixing consoles, radio microphones, amplifiers, comms, and more. Melbourne-based, Australia-wide.">
+  <section class="page-header">
+    <div class="container">
+      <p class="section-label">Equipment Hire</p>
+      <h1>Premium sound equipment. <span style="color:var(--color-accent)">Ready to hire.</span></h1>
+      <p>World-class inventory maintained to the highest standards. From a single wireless mic to a full theatre package.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <p style="margin-bottom:2rem; font-size:1.05rem">
+        System Sound has a wide range of high quality and unique sound equipment and bespoke rigging solutions for sound installations, amassed over our 45+ year history of providing Australia's leading sound engineering facilities.
+      </p>
+      <div class="equipment-grid">
+        {EQUIPMENT_CATEGORIES.map(cat => (
+          <a href={`/equipment/${cat.slug}`} class="equipment-card">
+            <div style="font-size:1.5rem; margin-bottom:0.5rem">{cat.icon}</div>
+            <h4>{cat.name}</h4>
+            <p>{cat.count}</p>
+          </a>
+        ))}
+      </div>
+      <p style="text-align:center; margin-top:2.5rem; color:var(--color-text-muted); font-size:0.9rem">
+        Don't see what you need? We source specialist equipment for every production.
+        <br /><a href="/sales-enquiry-request">Ask us about your requirements →</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Need gear for your next show?</h2>
+      <p>Tell us what you're working on and we'll put together a package.</p>
+      <a href="/sales-enquiry-request" class="btn btn-primary">Request a quote</a>
+    </div>
+  </section>
+</BaseLayout>

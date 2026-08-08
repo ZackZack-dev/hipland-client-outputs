@@ -1,0 +1,18 @@
+{
+  "name": "System Sound",
+  "tagline": "Behind Australia's biggest shows. Since 1979.",
+  "description": "System Sound specialises in world-class audio design, engineering, and equipment hire for theatre, concerts, and live events across Australia and the Asia-Pacific. Direct Meyer Sound distributor.",
+  "url": "https://systemsound.com.au",
+  "email": "info@systemsound.com.au",
+  "phone": "+61 3 9645 2600",
+  "fax": "+61 3 9645 6100",
+  "address": {
+    "office": "5 Westside Avenue, Port Melbourne VIC 3207, Australia",
+    "deliveries": "5 Bayside Avenue, Port Melbourne VIC 3207, Australia"
+  },
+  "founded": 1979,
+  "social": {
+    "facebook": "https://www.facebook.com/systemsoundaustralia",
+    "instagram": "https://www.instagram.com/systemsoundau"
+  }
+}

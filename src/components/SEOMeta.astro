@@ -1,0 +1,54 @@
+---
+import { SITE } from '../data/site';
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+const {
+  title = SITE.name,
+  description = SITE.description,
+  image,
+} = Astro.props;
+const fullTitle = title === SITE.name ? `${SITE.name} — ${SITE.tagline}` : `${title} — ${SITE.name}`;
+---
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={new URL(Astro.url.pathname, SITE.url).href} />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={new URL(Astro.url.pathname, SITE.url).href} />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{SITE.name}",
+  "url": "{SITE.url}",
+  "email": "{SITE.email}",
+  "telephone": "{SITE.phone}",
+  "description": "{SITE.description}",
+  "foundingDate": "{SITE.founded}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{SITE.address.office}",
+    "addressLocality": "Port Melbourne",
+    "addressRegion": "Victoria",
+    "addressCountry": "Australia"
+  },
+  "sameAs": [
+    "{SITE.social.facebook}",
+    "{SITE.social.instagram}"
+  ]
+}
+</script>

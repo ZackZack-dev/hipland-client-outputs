@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+---
+
+<BaseLayout title="Contact & Location" description="Contact System Sound. 5 Westside Avenue, Port Melbourne VIC 3207. Phone +61 3 9645 2600. Email info@systemsound.com.au.">
+  <section class="page-header">
+    <div class="container">
+      <p class="section-label">Contact</p>
+      <h1>Let's <span style="color:var(--color-accent)">talk</span>.</h1>
+      <p>We're based in Port Melbourne, serving productions and venues across Australia and the Asia-Pacific.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>System Sound Pty. Ltd.</h3>
+          <div class="contact-detail" style="margin-top:1.5rem">
+            <strong>Office</strong>
+            <p>5 Westside Avenue<br />Port Melbourne VIC 3207<br />Australia</p>
+          </div>
+          <div class="contact-detail">
+            <strong>Deliveries</strong>
+            <p>5 Bayside Avenue<br />Port Melbourne VIC 3207<br />Australia</p>
+          </div>
+          <div class="contact-detail">
+            <strong>Phone</strong>
+            <p><a href={`tel:${SITE.phone}`}>{SITE.phone}</a><br />Fax: {SITE.fax}</p>
+          </div>
+          <div class="contact-detail">
+            <strong>Email</strong>
+            <p><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+          </div>
+          <div style="margin-top:1.5rem; display:flex; gap:1rem">
+            <a href={SITE.social.facebook} class="btn btn-outline btn-sm" target="_blank" rel="noopener">Facebook</a>
+            <a href={SITE.social.instagram} class="btn btn-outline btn-sm" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div>
+          <h3 style="margin-bottom:1.5rem">Send us a message</h3>
+          <form class="contact-form" action="/sales-enquiry-request" method="get">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
+            <div class="form-group">
+              <label for="message">What are you working on?</label>
+              <textarea id="message" name="message" required placeholder="Tell us about your production, venue, or project..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send enquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

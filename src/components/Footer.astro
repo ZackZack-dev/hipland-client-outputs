@@ -1,0 +1,53 @@
+---
+import { SITE } from '../data/site';
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>System <span style="color:var(--color-accent)">Sound</span></h3>
+        <p>Behind Australia's biggest shows. Since 1979.</p>
+        <p style="margin-top:0.75rem">
+          5 Westside Avenue<br />
+          Port Melbourne VIC 3207<br />
+          Australia
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/commercial-theatre">Commercial Theatre</a></li>
+          <li><a href="/equipment">Equipment Hire</a></li>
+          <li><a href="/meyer-sound-sales">Meyer Sound</a></li>
+          <li><a href="/schools">Schools</a></li>
+          <li><a href="/venue-installation">Installation</a></li>
+          <li><a href="/used-equipment-home">Used Equipment</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about-us">About Us</a></li>
+          <li><a href="/press-and-news">News</a></li>
+          <li><a href="/case-studies">Case Studies</a></li>
+          <li><a href="/location-and-contacts">Contact</a></li>
+          <li><a href="/sales-enquiry-request">Enquire</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href={SITE.social.facebook} target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href={SITE.social.instagram} target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href={`mailto:${SITE.email}`}>Email Us</a></li>
+          <li><a href={`tel:${SITE.phone}`}>{SITE.phone}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; {new Date().getFullYear()} System Sound Pty. Ltd. Australian owned.</span>
+      <a href="/privacy-policy">Privacy</a>
+    </div>
+  </div>
+</footer>
