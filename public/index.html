@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>System Sound — Sound Design & Engineering Since 1979</title>
+<meta name="description" content="Behind the sound of Australia's biggest shows. World-class audio for theatre, live events, and permanent installations. Direct Meyer Sound distributor. Since 1979." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{font-size:16px;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+  body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#252523;background:#fff;line-height:1.65}
+  img{max-width:100%;display:block}
+  a{text-decoration:none;color:inherit;transition:all .3s}
+  .container{max-width:1280px;margin:0 auto;padding:0 2rem}
+
+  /* Header */
+  .header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid #e6e8ea}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto;padding:0 2rem;height:72px}
+  .logo{font-weight:800;font-size:1.35rem;color:#0c0d0e;letter-spacing:-.02em}
+  .logo em{font-style:normal;color:#1B855D}
+  .nav{display:flex;gap:1.75rem;align-items:center;list-style:none}
+  .nav a{font-size:.85rem;font-weight:500;color:#828282}
+  .nav a:hover{color:#0c0d0e}
+  .nav .cta-link{padding:.5rem 1.4rem;background:#BEFF01;color:#0c0d0e;border-radius:100px;font-weight:700}
+  .nav .cta-link:hover{background:#a8e600;color:#0c0d0e}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:.35rem;padding:.8rem 1.8rem;font-weight:700;font-size:.9rem;border-radius:100px;transition:all .3s;border:none;cursor:pointer}
+  .btn-primary{background:#BEFF01;color:#0c0d0e}
+  .btn-primary:hover{background:#a8e600;transform:translateY(-1px)}
+  .btn-outline{background:transparent;color:#0c0d0e;border:1.5px solid #e6e8ea}
+  .btn-outline:hover{border-color:#1B855D;color:#1B855D}
+  .btn-link{font-weight:700;color:#1B855D;background:none;padding:0}
+  .btn-link:hover{color:#0f6b49}
+
+  /* Sections — consistent vertical rhythm */
+  section{padding:5.5rem 0}
+
+  /* Hero — text-driven, no giant image split */
+  .hero{padding-top:calc(72px + 5rem);padding-bottom:5rem}
+  .hero-badge{display:inline-block;background:#DBF2E7;color:#1B855D;font-size:.75rem;font-weight:700;padding:.35rem 1rem;border-radius:100px;margin-bottom:2rem}
+  .hero-tags{display:flex;gap:2rem;margin-bottom:1.75rem;flex-wrap:wrap}
+  .hero-tag{display:flex;align-items:center;gap:.65rem;font-size:.85rem;color:#828282;font-weight:500}
+  .hero-tag .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .hero-tag .dot.green{background:#1B855D}
+  .hero-tag .dot.lime{background:#BEFF01}
+  .hero-tag .dot.teal{background:#0891b2}
+  .hero-tag .dot.amber{background:#f59e0b}
+  .hero h1{font-size:clamp(2.8rem,5.5vw,4.5rem);font-weight:800;color:#0c0d0e;line-height:1.08;letter-spacing:-.03em;margin-bottom:1.5rem;max-width:14ch}
+  .hero h1 em{font-style:normal;color:#1B855D}
+  .hero .subtitle{font-size:1.05rem;color:#828282;max-width:520px;line-height:1.7;margin-bottom:2rem}
+
+  /* Services row — compact numbered strip */
+  .services-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3rem}
+  .service-item .num{font-size:.7rem;font-weight:800;color:#1B855D;letter-spacing:.08em;margin-bottom:.5rem;display:block}
+  .service-item h4{font-size:1.05rem;font-weight:700;color:#0c0d0e;margin-bottom:.35rem}
+  .service-item p{font-size:.85rem;color:#828282;line-height:1.55}
+
+  /* Section labels */
+  .sec-label{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#1B855D;margin-bottom:1rem}
+  .sec-title{font-size:clamp(2rem,3.5vw,2.8rem);font-weight:800;color:#0c0d0e;letter-spacing:-.02em;margin-bottom:1rem}
+  .sec-sub{font-size:1.05rem;color:#828282;max-width:560px;line-height:1.68}
+
+  /* Portfolio grid */
+  .portfolio-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:2.5rem}
+  .portfolio-item{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/5;background:#f7f7f7}
+  .portfolio-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .portfolio-item:hover img{transform:scale(1.05)}
+  .portfolio-item .overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.6) 0%,transparent 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem;opacity:0;transition:opacity .3s}
+  .portfolio-item:hover .overlay{opacity:1}
+  .portfolio-item .cat{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#BEFF01;margin-bottom:.3rem}
+  .portfolio-item .title{font-size:.95rem;font-weight:700;color:#fff;line-height:1.2}
+
+  /* Awards / Big numbers */
+  .awards{background:#f8fafb;padding:5rem 0}
+  .award-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:2.5rem}
+  .award-item .big-num{font-size:2.8rem;font-weight:800;color:#1B855D;line-height:1}
+  .award-item .sub{font-size:.85rem;color:#828282;margin-top:.35rem}
+
+  /* Logo strip */
+  .logo-strip{display:flex;gap:2.5rem;justify-content:center;align-items:center;flex-wrap:wrap;opacity:.4;margin-top:2.5rem}
+
+  /* Testimonials carousel area */
+  .testimonials{background:#DBF2E7}
+  .testimonial-card{background:#fff;border-radius:16px;padding:2.5rem;text-align:center;max-width:700px;margin:2rem auto 0}
+  .testimonial-card .rating{font-size:.85rem;font-weight:700;color:#0c0d0e;margin-bottom:.75rem}
+  .testimonial-card .stars{color:#f59e0b;margin-right:.25rem}
+  .testimonial-card blockquote{font-size:1.15rem;color:#252523;line-height:1.6;margin-bottom:1.25rem;font-style:normal}
+  .testimonial-card cite{font-style:normal;font-size:.85rem;color:#828282;font-weight:500}
+  .testimonial-card cite strong{color:#0c0d0e;display:block;font-weight:700;margin-bottom:.15rem}
+  .carousel-controls{display:flex;justify-content:center;gap:1rem;margin-top:1.5rem}
+  .carousel-dot{width:10px;height:10px;border-radius:50%;background:#c4c4c4;border:none;cursor:pointer}
+  .carousel-dot.active{background:#1B855D;width:24px;border-radius:5px}
+
+  /* Blog / News cards */
+  .news-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:2.5rem}
+  .news-card{border-radius:12px;overflow:hidden;background:#fff;border:1px solid #e6e8ea;transition:all .3s}
+  .news-card:hover{border-color:#BEFF01}
+  .news-card .thumb{background:#f7f7f7;aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;font-size:2rem}
+  .news-card .body{padding:1.25rem}
+  .news-card .date{font-size:.7rem;color:#828282;margin-bottom:.35rem}
+  .news-card h5{font-size:.9rem;font-weight:700;color:#0c0d0e;line-height:1.3}
+
+  /* CTA / Work Together */
+  .work-together{padding:4rem 0}
+  .work-together .tag{display:inline-block;font-size:.8rem;font-weight:700;color:#1B855D;margin-bottom:.5rem}
+  .work-together h3{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:800;color:#0c0d0e}
+  .work-together h3 a{color:#1B855D;text-decoration:underline;text-underline-offset:4px}
+  .work-together h3 a:hover{color:#0f6b49}
+
+  /* Footer */
+  .footer{background:#1f242e;color:#a8a8a8;padding:4rem 0 2rem}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+  .footer h4{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fff;margin-bottom:1rem}
+  .footer ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+  .footer a{color:#a8a8a8;font-size:.85rem}
+  .footer a:hover{color:#BEFF01}
+  .footer .flogo{font-weight:800;font-size:1.2rem;color:#fff;display:inline-block;margin-bottom:.75rem}
+  .footer .flogo em{font-style:normal;color:#BEFF01}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;display:flex;justify-content:space-between;font-size:.75rem}
+
+  /* Mint bg utility */
+  .bg-mint{background:#DBF2E7}
+  .bg-light{background:#f8fafb}
+
+  /* Dark section utility */
+  .bg-dark{background:#1f242e;color:#fff}
+  .bg-dark .sec-title{color:#fff}
+  .bg-dark .sec-sub{color:rgba(255,255,255,.6)}
+  .bg-dark .service-item h4{color:#fff}
+  .bg-dark .service-item p{color:rgba(255,255,255,.5)}
+  .bg-dark .award-item .big-num{color:#BEFF01}
+  .bg-dark .award-item .sub{color:rgba(255,255,255,.5)}
+
+  @media(max-width:768px){
+    .services-row,.portfolio-grid,.news-grid,.award-grid{grid-template-columns:repeat(2,1fr)}
+    .footer-grid{grid-template-columns:1fr 1fr}
+    .nav{display:none}
+    .hero h1{font-size:2.2rem}
+  }
+  @media(max-width:500px){
+    .services-row,.portfolio-grid,.news-grid,.award-grid{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr}
+    .hero-tags{flex-direction:column;gap:.75rem}
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">System<em>Sound</em></a>
+    <ul class="nav">
+      <li><a href="/about-us">About</a></li>
+      <li><a href="/commercial-theatre">Theatre</a></li>
+      <li><a href="/equipment">Hire</a></li>
+      <li><a href="/meyer-sound-sales">Meyer Sound</a></li>
+      <li><a href="/schools">Schools</a></li>
+      <li><a href="/location-and-contacts">Contact</a></li>
+      <li><a href="/sales-enquiry-request" class="cta-link">Enquire</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- HERO — text-driven, no split image -->
+<section class="hero">
+  <div class="container" style="max-width:780px">
+    <span class="hero-badge">Since 1979</span>
+    <div class="hero-tags">
+      <span class="hero-tag"><span class="dot green"></span> Direct Meyer Sound Distributor</span>
+      <span class="hero-tag"><span class="dot lime"></span> Melbourne, Australia</span>
+      <span class="hero-tag"><span class="dot teal"></span> 45+ Years Experience</span>
+      <span class="hero-tag"><span class="dot amber"></span> 100+ Major Productions</span>
+    </div>
+    <h1>Behind the <em>sound</em> of Australia's biggest shows</h1>
+    <p class="subtitle">World-class audio design, engineering and equipment hire for commercial theatre, live events, and permanent installations across Australia and the Asia-Pacific.</p>
+    <a href="/about-us" class="btn btn-primary">About System Sound →</a>
+  </div>
+</section>
+
+<!-- SERVICES — numbered row, just like Crafto's 01/02/03 -->
+<section style="padding-top:0">
+  <div class="container">
+    <span class="sec-label">What we do</span>
+    <div class="services-row">
+      <div class="service-item">
+        <span class="num">01</span>
+        <h4>Commercial Theatre</h4>
+        <p>Full-service audio for professional musical theatre — system design, crew, equipment, and support.</p>
+      </div>
+      <div class="service-item">
+        <span class="num">02</span>
+        <h4>Equipment Hire</h4>
+        <p>Meyer Sound, DiGiCo, Sennheiser, Shure. World-class inventory maintained to the highest standard.</p>
+      </div>
+      <div class="service-item">
+        <span class="num">03</span>
+        <h4>Meyer Sound Sales</h4>
+        <p>Direct Australian distributor since 1985. Sales, installation, tuning, and ongoing support.</p>
+      </div>
+      <div class="service-item">
+        <span class="num">04</span>
+        <h4>Schools & Education</h4>
+        <p>Professional sound for school productions, installations, and student career mentorship.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS — 4-column portfolio grid, just like Crafto's -->
+<section class="bg-light">
+  <div class="container">
+    <span class="sec-label">Productions</span>
+    <h2 class="sec-title">Our work</h2>
+    <p class="sec-sub">Trusted by the biggest names in Australian and international theatre.</p>
+    <div class="portfolio-grid">
+      <a href="/case-studies" class="portfolio-item">
+        <img src="/images/console-hero.jpg" alt="" />
+        <div class="overlay"><span class="cat">Theatre</span><span class="title">Book of Mormon</span></div>
+      </a>
+      <a href="/case-studies" class="portfolio-item">
+        <img src="/images/speaker-array.jpg" alt="" />
+        <div class="overlay"><span class="cat">Tour</span><span class="title">Sunset Boulevard</span></div>
+      </a>
+      <a href="/case-studies" class="portfolio-item">
+        <img src="/images/studio-monitor.jpg" alt="" />
+        <div class="overlay"><span class="cat">Theatre</span><span class="title">Moulin Rouge</span></div>
+      </a>
+      <a href="/case-studies" class="portfolio-item">
+        <img src="/images/backstage.jpg" alt="" />
+        <div class="overlay"><span class="cat">Theatre</span><span class="title">Phantom of the Opera</span></div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:2rem">
+      <a href="/case-studies" class="btn btn-outline">Explore all productions →</a>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS / STATS — big numbers, just like Crafto's "9X, 2X, 4X, 3X" -->
+<section class="awards">
+  <div class="container">
+    <span class="sec-label">By the numbers</span>
+    <h2 class="sec-title">45 years of engineering excellence</h2>
+    <p class="sec-sub">Founded in 1979 by John Scandrett. Second-generation family leadership, with a curated team of Australia's finest audio engineers and designers.</p>
+    <div class="award-grid">
+      <div class="award-item">
+        <div class="big-num">45+</div>
+        <div class="sub">Years of technical innovation and production excellence</div>
+      </div>
+      <div class="award-item">
+        <div class="big-num">100+</div>
+        <div class="sub">Major productions across Australia and the Asia-Pacific</div>
+      </div>
+      <div class="award-item">
+        <div class="big-num">Meyer</div>
+        <div class="sub">Direct Australian distributor — one of the largest stockists nationally</div>
+      </div>
+      <div class="award-item">
+        <div class="big-num">Aus</div>
+        <div class="sub">Australian owned and operated. Genuinely invested in every project</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS — carousel style, like Crafto's Clutch review area -->
+<section class="testimonials">
+  <div class="container">
+    <div style="text-align:center">
+      <span class="sec-label">Industry recognition</span>
+      <h2 class="sec-title">What they say</h2>
+    </div>
+    <div class="testimonial-card">
+      <div class="rating"><span class="stars">★★★★★</span> Press & Industry</div>
+      <blockquote>"System Sound's switch from L'Acoustics to Meyer Sound for Book of Mormon demonstrates why they're at the cutting edge of theatrical sound reinforcement."</blockquote>
+      <cite><strong>CX Network</strong> October 2025</cite>
+    </div>
+    <div class="carousel-controls">
+      <button class="carousel-dot active" aria-label="Slide 1"></button>
+      <button class="carousel-dot" aria-label="Slide 2"></button>
+      <button class="carousel-dot" aria-label="Slide 3"></button>
+    </div>
+    <!-- Client/partner logos -->
+    <div class="logo-strip">
+      <span style="font-weight:700;color:#1B855D;font-size:.9rem">Meyer Sound</span>
+      <span style="font-weight:700;color:#1B855D;font-size:.9rem">DiGiCo</span>
+      <span style="font-weight:700;color:#1B855D;font-size:.9rem">Sennheiser</span>
+      <span style="font-weight:700;color:#1B855D;font-size:.9rem">Shure</span>
+      <span style="font-weight:700;color:#1B855D;font-size:.9rem">Allen & Heath</span>
+      <span style="font-weight:700;color:#1B855D;font-size:.9rem">Yamaha</span>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS — 4-column cards, just like Crafto's "Latest blogs" -->
+<section>
+  <div class="container">
+    <span class="sec-label">Latest</span>
+    <h2 class="sec-title">News & press</h2>
+    <div class="news-grid">
+      <a href="https://www.cxnetwork.com.au/converting-with-the-book-of-mormon/" class="news-card" target="_blank" rel="noopener">
+        <div class="thumb">📰</div>
+        <div class="body">
+          <div class="date">CX Network · October 2025</div>
+          <h5>Converting with The Book of Mormon</h5>
+        </div>
+      </a>
+      <a href="https://www.audiotechnology.com/features/sound-for-sunset-boulevard" class="news-card" target="_blank" rel="noopener">
+        <div class="thumb">🎧</div>
+        <div class="body">
+          <div class="date">Audio Technology · August 2025</div>
+          <h5>Sound for Sunset Boulevard</h5>
+        </div>
+      </a>
+      <a href="https://www.cxnetwork.com.au/moulin-rouge-more-is-more/" class="news-card" target="_blank" rel="noopener">
+        <div class="thumb">🎭</div>
+        <div class="body">
+          <div class="date">CX Network · August 2025</div>
+          <h5>Moulin Rouge: More Is More</h5>
+        </div>
+      </a>
+      <a href="/press-and-news" class="news-card">
+        <div class="thumb">📡</div>
+        <div class="body">
+          <div class="date">System Sound · 2025</div>
+          <h5>Rent at Sydney Opera House</h5>
+        </div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:2rem">
+      <a href="/press-and-news" class="btn btn-outline">Explore all news →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WORK TOGETHER — Crafto-style footer CTA -->
+<section class="work-together">
+  <div class="container">
+    <span class="tag">work together</span>
+    <h3>Let's make something great <a href="/sales-enquiry-request">work together?</a></h3>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="flogo">System<em>Sound</em></a>
+        <p style="font-size:.85rem">5 Westside Avenue, Port Melbourne VIC 3207<br />Australia</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/commercial-theatre">Theatre</a></li>
+          <li><a href="/equipment">Hire</a></li>
+          <li><a href="/meyer-sound-sales">Meyer Sound</a></li>
+          <li><a href="/schools">Schools</a></li>
+          <li><a href="/venue-installation">Installation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about-us">About</a></li>
+          <li><a href="/case-studies">Case Studies</a></li>
+          <li><a href="/press-and-news">News</a></li>
+          <li><a href="/location-and-contacts">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/systemsoundau">Instagram</a></li>
+          <li><a href="https://www.facebook.com/systemsoundaustralia">Facebook</a></li>
+          <li><a href="mailto:info@systemsound.com.au">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 System Sound Pty. Ltd.</span>
+      <a href="/privacy-policy">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
