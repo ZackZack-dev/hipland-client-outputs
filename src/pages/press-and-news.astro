@@ -3,66 +3,51 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="News & Press" description="Latest news, press coverage, and updates from System Sound. Industry articles, production news, and behind-the-scenes from Australia's leading theatre sound company.">
-  <section class="page-header">
+  <section class="page-head">
     <div class="container">
-      <p class="section-label">News & Press</p>
-      <h1>What's <span style="color:var(--color-accent)">happening</span>.</h1>
-      <p>Industry coverage, production updates, and behind-the-scenes from the System Sound team.</p>
+      <div class="section-num">News & Press</div>
+      <h1 class="hero-headline" style="font-size:clamp(3.5rem, 8vw, 8rem)">What's<br /><span style="color:var(--gold)">happening</span></h1>
+      <p class="body-text body-lg" style="margin-top:2rem">Industry coverage, production updates, and behind-the-scenes from the System Sound team.</p>
     </div>
   </section>
 
-  <section class="content-section">
+  <div class="rule"></div>
+
+  <section class="section">
     <div class="container">
       <div class="news-grid">
         <article class="news-card">
-          <div class="news-card-body">
-            <div class="news-card-date">October 2025</div>
-            <h3>Converting with The Book of Mormon</h3>
-            <p>Associate Sound Designer David Greasley speaks with CX Network about System Sound's switch from L'Acoustics to Meyer Sound for Book of Mormon.</p>
-            <a href="https://www.cxnetwork.com.au/converting-with-the-book-of-mormon/" class="card-link" target="_blank" rel="noopener">Read on CX Network →</a>
-          </div>
+          <span class="news-date">October 2025</span>
+          <h3 class="news-title">Converting with The Book of Mormon</h3>
+          <p class="news-excerpt">David Greasley speaks with CX Network about System Sound's switch from L'Acoustics to Meyer Sound for Book of Mormon, and why Meyer is at the cutting edge of theatrical sound reinforcement.</p>
+          <a href="https://www.cxnetwork.com.au/converting-with-the-book-of-mormon/" class="card-link" target="_blank" rel="noopener">CX Network →</a>
         </article>
-
         <article class="news-card">
-          <div class="news-card-body">
-            <div class="news-card-date">August 2025</div>
-            <h3>Audio Technology Magazine — Sound for Sunset Boulevard</h3>
-            <p>An in-depth feature on the sound design for Sunset Boulevard's Australian premiere, with Meyer Sound Leopard and 900-LFC systems.</p>
-            <a href="https://www.audiotechnology.com/features/sound-for-sunset-boulevard" class="card-link" target="_blank" rel="noopener">Read on Audio Technology →</a>
-          </div>
+          <span class="news-date">August 2025</span>
+          <h3 class="news-title">Sound for Sunset Boulevard</h3>
+          <p class="news-excerpt">Audio Technology Magazine features the sound design for Sunset Boulevard's Australian premiere — Meyer Sound Leopard and 900-LFC systems in action.</p>
+          <a href="https://www.audiotechnology.com/features/sound-for-sunset-boulevard" class="card-link" target="_blank" rel="noopener">Audio Technology →</a>
         </article>
-
         <article class="news-card">
-          <div class="news-card-body">
-            <div class="news-card-date">August 2025</div>
-            <h3>CX Magazine — Moulin Rouge: More Is More</h3>
-            <p>Jason Allen explores the sound behind the world's biggest musical, featuring System Sound's work on the Australian production.</p>
-            <a href="https://www.cxnetwork.com.au/moulin-rouge-more-is-more/" class="card-link" target="_blank" rel="noopener">Read on CX Network →</a>
-          </div>
+          <span class="news-date">August 2025</span>
+          <h3 class="news-title">Moulin Rouge: More Is More</h3>
+          <p class="news-excerpt">Jason Allen explores the sound behind the world's biggest musical, featuring System Sound's work on the Australian production.</p>
+          <a href="https://www.cxnetwork.com.au/moulin-rouge-more-is-more/" class="card-link" target="_blank" rel="noopener">CX Network →</a>
         </article>
-
         <article class="news-card">
-          <div class="news-card-body">
-            <div class="news-card-date">2025</div>
-            <h3>Rent at Sydney Opera House</h3>
-            <p>A tremendous opening night at the Sydney Opera House for Opera Australia's Rent. System Sound supplied equipment and crew for this exciting new production, with original Australian Sound Design by Evan Drill.</p>
-          </div>
+          <span class="news-date">2025</span>
+          <h3 class="news-title">Rent at Sydney Opera House</h3>
+          <p class="news-excerpt">A tremendous opening night for Opera Australia's Rent. System Sound supplied full equipment and crew — Chris Pratt (PSE), Owen Arnold (HoD), and team.</p>
         </article>
-
         <article class="news-card">
-          <div class="news-card-body">
-            <div class="news-card-date">2025</div>
-            <h3>Sunset Boulevard Asia Tour</h3>
-            <p>The Australian production toured through Singapore, Beijing, Shenzhen, Wuhan, and Taipei. Sound Design by David Greasley — a masterclass in musical theatre sound.</p>
-          </div>
+          <span class="news-date">2025</span>
+          <h3 class="news-title">Sunset Boulevard Asia Tour</h3>
+          <p class="news-excerpt">The Australian production toured through Singapore, Beijing, Shenzhen, Wuhan, and Taipei. Sound Design by David Greasley.</p>
         </article>
-
         <article class="news-card">
-          <div class="news-card-body">
-            <div class="news-card-date">2025</div>
-            <h3>In The Heights — Melbourne</h3>
-            <p>Proudly providing sound equipment, personnel and operators for the exciting Melbourne remount sound designed by David Tonion at the Comedy Theatre.</p>
-          </div>
+          <span class="news-date">2025</span>
+          <h3 class="news-title">In The Heights — Melbourne</h3>
+          <p class="news-excerpt">Proudly providing sound equipment, personnel and operators for the Melbourne remount, sound designed by David Tonion at the Comedy Theatre.</p>
         </article>
       </div>
     </div>

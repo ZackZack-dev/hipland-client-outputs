@@ -2,28 +2,25 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Privacy Policy" description="System Sound privacy policy and cookie information.">
-  <section class="page-header">
+<BaseLayout title="Privacy Policy" description="System Sound privacy policy.">
+  <section class="page-head">
     <div class="container">
-      <h1>Privacy <span style="color:var(--color-accent)">Policy</span></h1>
+      <div class="section-num">Legal</div>
+      <h1 class="hero-headline" style="font-size:clamp(3rem, 6vw, 5rem)">Privacy<br /><span style="color:var(--gold)">Policy</span></h1>
     </div>
   </section>
 
-  <section class="content-section">
-    <div class="container">
-      <div class="prose">
-        <h2>Cookies & Privacy</h2>
-        <p>This website is built as a static site and does not use tracking cookies or collect personal data beyond what you voluntarily provide through our contact forms.</p>
+  <div class="rule"></div>
 
-        <h3>Information We Collect</h3>
-        <p>When you submit an enquiry through our website, we collect the information you provide: name, email, phone number, company, and project details. This information is used solely to respond to your enquiry and provide our services.</p>
-
-        <h3>Third Parties</h3>
-        <p>We do not share your information with third parties except as required to provide our services or as required by law. This site is hosted on Cloudflare Pages. Cloudflare may collect anonymous analytics data as part of their infrastructure.</p>
-
-        <h3>Contact</h3>
-        <p>For any privacy-related questions, please contact us at info@systemsound.com.au or call +61 3 9645 2600.</p>
-      </div>
+  <section class="section">
+    <div class="container" style="max-width:640px">
+      <p class="body-text">This website is built as a static site and does not use tracking cookies or collect personal data beyond what you voluntarily provide through our contact forms.</p>
+      <h3 class="card-title" style="margin-top:2rem; margin-bottom:0.75rem">Information We Collect</h3>
+      <p class="card-desc">When you submit an enquiry, we collect the information you provide: name, email, phone, company, and project details. This information is used solely to respond to your enquiry.</p>
+      <h3 class="card-title" style="margin-top:2rem; margin-bottom:0.75rem">Third Parties</h3>
+      <p class="card-desc">We do not share your information with third parties except as required to provide our services or by law. This site is hosted on Cloudflare Pages.</p>
+      <h3 class="card-title" style="margin-top:2rem; margin-bottom:0.75rem">Contact</h3>
+      <p class="card-desc">For privacy questions: info@systemsound.com.au or +61 3 9645 2600.</p>
     </div>
   </section>
 </BaseLayout>

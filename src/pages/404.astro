@@ -2,17 +2,16 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Page Not Found">
-  <section class="page-header" style="min-height:60vh; display:flex; flex-direction:column; align-items:center; justify-content:center">
+<BaseLayout title="404 — Not Found">
+  <section class="page-head" style="min-height:60vh; display:flex; flex-direction:column; align-items:center; justify-content:center">
     <div class="container" style="text-align:center">
-      <p style="font-size:4rem; font-weight:800; color:var(--color-accent); margin-bottom:0">404</p>
-      <h1 style="margin-top:0">That page doesn't exist.</h1>
-      <p>But plenty of great ones do. Let's get you back on track.</p>
-      <div style="display:flex; gap:1rem; justify-content:center; margin-top:2rem; flex-wrap:wrap">
+      <div class="section-num" style="margin-bottom:1rem">Error</div>
+      <div class="hero-headline" style="font-size:clamp(6rem, 15vw, 15rem); color:var(--gold); margin-bottom:0">404</div>
+      <p class="body-text body-lg" style="margin:1rem auto 2rem; text-align:center">That page doesn't exist. But plenty of great ones do.</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap">
         <a href="/" class="btn btn-primary">Home</a>
-        <a href="/commercial-theatre" class="btn btn-outline">Commercial Theatre</a>
-        <a href="/equipment" class="btn btn-outline">Equipment Hire</a>
-        <a href="/schools" class="btn btn-outline">Schools</a>
+        <a href="/commercial-theatre" class="btn">Commercial Theatre</a>
+        <a href="/equipment" class="btn">Equipment</a>
       </div>
     </div>
   </section>

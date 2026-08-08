@@ -3,40 +3,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { EQUIPMENT_CATEGORIES } from '../data/site';
 ---
 
-<BaseLayout title="Equipment Hire" description="Hire premium sound equipment from System Sound. Speakers, mixing consoles, radio microphones, amplifiers, comms, and more. Melbourne-based, Australia-wide.">
-  <section class="page-header">
+<BaseLayout title="Equipment Hire" description="Hire premium sound equipment from System Sound. Speakers, mixing consoles, radio microphones, amplifiers, comms. Melbourne-based, Australia-wide.">
+  <section class="page-head">
     <div class="container">
-      <p class="section-label">Equipment Hire</p>
-      <h1>Premium sound equipment. <span style="color:var(--color-accent)">Ready to hire.</span></h1>
-      <p>World-class inventory maintained to the highest standards. From a single wireless mic to a full theatre package.</p>
+      <div class="section-num">Equipment</div>
+      <h1 class="hero-headline" style="font-size:clamp(3.5rem, 8vw, 8rem)">Premium<br /><span style="color:var(--gold)">gear</span>.<br />Ready to hire.</h1>
+      <p class="body-text body-lg" style="margin-top:2rem">World-class inventory maintained to the highest standards. From a single wireless mic to a full theatre package.</p>
     </div>
   </section>
 
-  <section class="content-section">
+  <div class="rule"></div>
+
+  <section class="section">
     <div class="container">
-      <p style="margin-bottom:2rem; font-size:1.05rem">
-        System Sound has a wide range of high quality and unique sound equipment and bespoke rigging solutions for sound installations, amassed over our 45+ year history of providing Australia's leading sound engineering facilities.
-      </p>
-      <div class="equipment-grid">
-        {EQUIPMENT_CATEGORIES.map(cat => (
-          <a href={`/equipment/${cat.slug}`} class="equipment-card">
-            <div style="font-size:1.5rem; margin-bottom:0.5rem">{cat.icon}</div>
-            <h4>{cat.name}</h4>
-            <p>{cat.count}</p>
+      <div class="section-num">01 / Categories</div>
+      <p class="body-text body-lg" style="margin-bottom:3rem">System Sound has a wide range of high quality sound equipment and bespoke rigging solutions, amassed over 45+ years of providing Australia's leading sound engineering facilities.</p>
+      <div class="equip-grid">
+        {EQUIPMENT_CATEGORIES.map((cat, i) => (
+          <a href={`/equipment/${cat.slug}`} class="equip-card">
+            <span class="card-num" style="margin-bottom:0.25rem">{(i + 1).toString().padStart(2, '0')}</span>
+            <span class="equip-name">{cat.name}</span>
+            <span class="equip-count">{cat.count}</span>
           </a>
         ))}
       </div>
-      <p style="text-align:center; margin-top:2.5rem; color:var(--color-text-muted); font-size:0.9rem">
-        Don't see what you need? We source specialist equipment for every production.
-        <br /><a href="/sales-enquiry-request">Ask us about your requirements →</a>
+      <p style="text-align:center; margin-top:2.5rem" class="mono-label">
+        Don't see what you need? <a href="/sales-enquiry-request" style="color:var(--gold)">Ask us →</a>
       </p>
     </div>
   </section>
 
-  <section class="cta-section">
+  <div class="rule"></div>
+
+  <section class="cta-block">
     <div class="container">
-      <h2>Need gear for your next show?</h2>
-      <p>Tell us what you're working on and we'll put together a package.</p>
+      <div class="section-num">02 / Quote</div>
+      <h2 class="display-md">Need gear?</h2>
+      <p class="body-text" style="margin:0 auto 2.5rem">Tell us what you're working on and we'll put together a package.</p>
       <a href="/sales-enquiry-request" class="btn btn-primary">Request a quote</a>
     </div>
   </section>

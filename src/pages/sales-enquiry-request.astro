@@ -3,34 +3,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Sales Enquiry" description="Tell us about your project. Request a quote for sound equipment hire, system design, venue installation, or production support from System Sound.">
-  <section class="page-header">
+  <section class="page-head">
     <div class="container">
-      <p class="section-label">Enquire</p>
-      <h1>Tell us about your <span style="color:var(--color-accent)">project</span>.</h1>
-      <p>Whether you're planning a major musical, upgrading a venue, or need gear for an event — we're ready to help. Fill out the form below and we'll get back to you promptly.</p>
+      <div class="section-num">Enquire</div>
+      <h1 class="hero-headline" style="font-size:clamp(3.5rem, 8vw, 8rem)">Tell us<br />about your<br /><span style="color:var(--gold)">project</span></h1>
+      <p class="body-text body-lg" style="margin-top:2rem; max-width:48ch">Planning a musical, upgrading a venue, or need gear for an event? We're ready to help.</p>
     </div>
   </section>
 
-  <section class="content-section">
-    <div class="container" style="max-width:680px">
-      <form class="contact-form" action="#" method="POST" style="gap:1.25rem">
-        <div class="form-group">
-          <label for="name">Your Name *</label>
-          <input type="text" id="name" name="name" required placeholder="Full name" />
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" name="email" required placeholder="you@example.com" />
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="+61..." />
-        </div>
-        <div class="form-group">
-          <label for="company">Company / Organisation</label>
-          <input type="text" id="company" name="company" placeholder="Theatre company, school, venue, etc." />
-        </div>
-        <div class="form-group">
+  <div class="rule"></div>
+
+  <section class="section">
+    <div class="container" style="max-width:640px">
+      <form class="form-grid" action="#" method="POST" style="gap:1.5rem">
+        <div class="form-field"><label for="name">Name *</label><input type="text" id="name" name="name" required /></div>
+        <div class="form-field"><label for="email">Email *</label><input type="email" id="email" name="email" required /></div>
+        <div class="form-field"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" /></div>
+        <div class="form-field"><label for="company">Company / Organisation</label><input type="text" id="company" name="company" /></div>
+        <div class="form-field">
           <label for="type">Enquiry Type *</label>
           <select id="type" name="type" required>
             <option value="">Select...</option>
@@ -43,14 +33,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <option value="other">Other</option>
           </select>
         </div>
-        <div class="form-group">
-          <label for="message">Tell us about your project *</label>
-          <textarea id="message" name="message" required placeholder="What do you need? When? Where? Any specific equipment or requirements? The more detail the better."></textarea>
-        </div>
+        <div class="form-field"><label for="message">Tell us about your project *</label><textarea id="message" name="message" required placeholder="What do you need? When? Where? The more detail, the better."></textarea></div>
         <button type="submit" class="btn btn-primary" style="width:100%">Submit enquiry</button>
-        <p style="font-size:0.8rem; color:var(--color-text-muted); text-align:center">
-          We'll get back to you within 1-2 business days. No obligation, just genuine expertise.
-        </p>
+        <p class="mono-label" style="text-align:center">We'll get back to you within 1-2 business days. No obligation — just genuine expertise.</p>
       </form>
     </div>
   </section>
