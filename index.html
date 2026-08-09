@@ -21,13 +21,13 @@ a{color:inherit;text-decoration:none}
 .nav-links{display:flex;gap:2rem;align-items:center}
 .nav-links a{font-size:1rem;font-weight:400;color:#121212;transition:opacity 0.2s}
 .nav-links a:hover{opacity:0.5}
-.nav-cta{font-size:1rem;font-weight:500;border:1px solid #121212;padding:0.5rem 1.25rem;border-radius:0;transition:all 0.2s}
+.nav-cta{font-size:1rem;font-weight:500;border:1.5px solid #121212;padding:0.5rem 1.25rem;border-radius:100px;transition:all 0.2s}
 .nav-cta:hover{background:#121212;color:#fff;opacity:1}
 @media(max-width:768px){.nav-wrap{padding:1.25rem}.nav-links{display:none}}
 
 /* Hero — Justified Studio: 40px, weight 500 */
 .hero{padding:8rem 2.5rem 6rem;max-width:1400px;margin:0 auto}
-.hero h1{font-size:40px;font-weight:500;line-height:1.0;letter-spacing:-0.01em;max-width:800px;color:#121212}
+.hero h1{font-size:clamp(36px,5vw,64px);font-weight:500;line-height:1.0;letter-spacing:-0.01em;max-width:800px;color:#121212}
 .hero p{font-size:1rem;color:#666;max-width:480px;margin-top:1.5rem;line-height:1.55}
 @media(max-width:768px){.hero{padding:6rem 1.25rem 4rem}.hero h1{font-size:32px}}
 
@@ -41,7 +41,7 @@ a{color:inherit;text-decoration:none}
 .scroll-track{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding:0 2.5rem 0.5rem;cursor:grab}
 .scroll-track::-webkit-scrollbar{height:0}
 .scroll-track:active{cursor:grabbing}
-.scroll-card{flex:0 0 400px;scroll-snap-align:start}
+.scroll-card{flex:0 0 280px;scroll-snap-align:start}
 .scroll-card img{width:100%;aspect-ratio:2/3;object-fit:cover;transition:opacity 0.3s}
 .scroll-card:hover img{opacity:0.85}
 .scroll-card .meta{margin-top:0.75rem}
@@ -49,7 +49,7 @@ a{color:inherit;text-decoration:none}
 .scroll-card .venue{font-size:0.75rem;color:#999;margin-top:0.25rem}
 /* arrow controls */
 .scroll-arrows{display:flex;gap:0.5rem;padding:0 2.5rem;max-width:1400px;margin:0 auto 1.5rem;justify-content:flex-end}
-.scroll-arrows button{width:40px;height:40px;border:1px solid #ccc;background:#fff;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all 0.2s;border-radius:0}
+.scroll-arrows button{width:40px;height:40px;border:1.5px solid #ccc;background:#fff;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all 0.2s;border-radius:100px}
 .scroll-arrows button:hover{border-color:#121212}
 @media(max-width:768px){.scroll-card{flex:0 0 280px}.scroll-track{padding:0 1.25rem 0.5rem}.scroll-arrows{padding:0 1.25rem}}
 
@@ -80,7 +80,7 @@ a{color:inherit;text-decoration:none}
 .cta{padding:6rem 2.5rem;text-align:center;max-width:700px;margin:0 auto}
 .cta h2{font-size:32px;font-weight:500;letter-spacing:-0.01em;line-height:1.1}
 .cta p{font-size:1rem;color:#666;margin-top:1rem;margin-bottom:2rem}
-.cta a{font-size:0.9rem;font-weight:500;border:1px solid #121212;padding:0.65rem 1.5rem;transition:all 0.2s}
+.cta a{font-size:0.9rem;font-weight:500;border:1.5px solid #121212;padding:0.65rem 1.5rem;transition:all 0.2s}
 .cta a:hover{background:#121212;color:#fff}
 
 /* Footer */
