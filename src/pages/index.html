@@ -17,7 +17,7 @@ a{color:inherit;text-decoration:none}
 
 /* Nav — Justified Studio style: clean, regular weight, normal case */
 .nav-wrap{padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}
-.logo{font-size:1rem;font-weight:500;letter-spacing:-0.01em}
+.logo{font-size:1.25rem;font-weight:500;letter-spacing:-0.01em}
 .nav-links{display:flex;gap:2rem;align-items:center}
 .nav-links a{font-size:1rem;font-weight:400;color:#121212;transition:opacity 0.2s}
 .nav-links a:hover{opacity:0.5}
@@ -115,8 +115,11 @@ footer ul li{margin-bottom:0.35rem}
 
 <div class="scroll-wrap">
   <div class="scroll-arrows">
-    <button onclick="document.querySelector('.scroll-track').scrollBy({left:-420,behavior:'smooth'})">←</button>
-    <button onclick="document.querySelector('.scroll-track').scrollBy({left:420,behavior:'smooth'})">→</button>
+    <span style="font-size:0.75rem;color:#999;display:flex;align-items:center">Current projects</span>
+    <div style="display:flex;gap:0.5rem">
+    <button onclick="document.querySelector('.scroll-track').scrollBy({left:-300,behavior:'smooth'})">←</button>
+    <button onclick="document.querySelector('.scroll-track').scrollBy({left:300,behavior:'smooth'})">→</button>
+    </div>
   </div>
   <div class="scroll-track">
     <div class="scroll-card">
