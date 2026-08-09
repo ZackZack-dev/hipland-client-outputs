@@ -14,9 +14,16 @@ html{font-size:16px;-webkit-font-smoothing:antialiased}
 body{font-family:'Inter',system-ui,sans-serif;color:#121212;background:#fff;line-height:1.5;font-weight:400;letter-spacing:-0.01em}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
+ul{list-style:none}
 
-/* Nav — Justified Studio style: clean, regular weight, normal case */
-.nav-wrap{padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}
+/* Welcome — dark intro that fades into the page */
+.welcome{position:fixed;inset:0;z-index:9999;background:#0a0a0a;display:flex;align-items:center;justify-content:center;pointer-events:none;transition:opacity 1.2s ease,visibility 1.2s ease}
+.welcome.hide{opacity:0;visibility:hidden}
+.welcome-text{color:rgba(255,255,255,0.6);font-size:1rem;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;animation:welcomePulse 3s ease-in-out infinite}
+@keyframes welcomePulse{0%,100%{opacity:0.3}50%{opacity:0.7}}
+
+/* Nav */
+.nav-wrap{position:relative;z-index:100;padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}
 .logo{font-size:1.25rem;font-weight:500;letter-spacing:-0.01em}
 .nav-links{display:flex;gap:2rem;align-items:center}
 .nav-links a{font-size:1rem;font-weight:400;color:#121212;transition:opacity 0.2s}
@@ -25,19 +32,45 @@ a{color:inherit;text-decoration:none}
 .nav-cta:hover{background:#121212;color:#fff;opacity:1}
 @media(max-width:768px){.nav-wrap{padding:1.25rem}.nav-links{display:none}}
 
-/* Hero — Justified Studio: 40px, weight 500 */
+/* Hamburger — two-line icon in rounded square */
+.hamburger{display:none;width:40px;height:40px;border-radius:8px;background:#f5f5f5;border:none;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:4px;position:relative;z-index:200}
+.hamburger span{display:block;width:16px;height:2px;background:#121212;border-radius:1px;transition:all 0.3s}
+.hamburger.active span:nth-child(1){transform:translateY(3px) rotate(45deg)}
+.hamburger.active span:nth-child(2){transform:translateY(-3px) rotate(-45deg)}
+@media(max-width:768px){.hamburger{display:flex}}
+
+/* Menu overlay — full-screen white */
+.menu-overlay{position:fixed;inset:0;z-index:150;background:#fff;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity 0.35s ease,visibility 0.35s ease;overflow-y:auto}
+.menu-overlay.open{opacity:1;visibility:visible}
+.menu-content{max-width:600px;width:100%;padding:5rem 2rem}
+.menu-pillars{display:flex;flex-direction:column;gap:2.5rem;margin-bottom:4rem}
+.menu-pillar{border-bottom:1px solid #e5e5e5;padding-bottom:2rem}
+.menu-pillar .num{font-size:0.7rem;color:#999;margin-bottom:0.5rem;display:block;letter-spacing:0.05em}
+.menu-pillar h4{font-size:1.5rem;font-weight:500;letter-spacing:-0.02em;margin-bottom:0.5rem}
+.menu-pillar p{font-size:0.9rem;color:#666;line-height:1.5}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.menu-grid a{display:block;padding:1rem 1.25rem;background:#f5f5f5;border-radius:8px;font-size:0.9rem;font-weight:500;text-align:center;transition:all 0.2s}
+.menu-grid a:hover{background:#121212;color:#fff}
+.menu-close{position:absolute;top:1.5rem;right:2rem;width:40px;height:40px;border-radius:8px;background:#f5f5f5;border:none;cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
+
+/* Hero */
 .hero{padding:8rem 2.5rem 6rem;max-width:1400px;margin:0 auto}
 .hero h1{font-size:clamp(36px,5vw,64px);font-weight:500;line-height:1.0;letter-spacing:-0.01em;max-width:800px;color:#121212}
 .hero p{font-size:1rem;color:#666;max-width:480px;margin-top:1.5rem;line-height:1.55}
 @media(max-width:768px){.hero{padding:6rem 1.25rem 4rem}.hero h1{font-size:32px}}
 
-/* Section headers — same Justified treatment */
+/* Section headers */
 .section-wrap{max-width:1400px;margin:0 auto;padding:0 2.5rem 3rem}
 .section-label{font-size:0.75rem;font-weight:400;color:#999;margin-bottom:1rem}
 @media(max-width:768px){.section-wrap{padding:0 1.25rem 2rem}}
 
 /* Full-bleed horizontal scroll */
 .scroll-wrap{overflow:hidden;margin-bottom:6rem}
+.scroll-arrows{display:flex;gap:0.5rem;padding:0 2.5rem;max-width:1400px;margin:0 auto 1.5rem;justify-content:space-between;align-items:center}
+.scroll-arrows .label{font-size:0.75rem;color:#999}
+.scroll-btns{display:flex;gap:0.5rem}
+.scroll-btns button{width:40px;height:40px;border:1.5px solid #ccc;background:#fff;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all 0.2s;border-radius:100px}
+.scroll-btns button:hover{border-color:#121212}
 .scroll-track{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding:0 2.5rem 0.5rem;cursor:grab}
 .scroll-track::-webkit-scrollbar{height:0}
 .scroll-track:active{cursor:grabbing}
@@ -47,11 +80,7 @@ a{color:inherit;text-decoration:none}
 .scroll-card .meta{margin-top:0.75rem}
 .scroll-card .title{font-size:0.9rem;font-weight:500;letter-spacing:-0.01em}
 .scroll-card .venue{font-size:0.75rem;color:#999;margin-top:0.25rem}
-/* arrow controls */
-.scroll-arrows{display:flex;gap:0.5rem;padding:0 2.5rem;max-width:1400px;margin:0 auto 1.5rem;justify-content:flex-end}
-.scroll-arrows button{width:40px;height:40px;border:1.5px solid #ccc;background:#fff;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all 0.2s;border-radius:100px}
-.scroll-arrows button:hover{border-color:#121212}
-@media(max-width:768px){.scroll-card{flex:0 0 280px}.scroll-track{padding:0 1.25rem 0.5rem}.scroll-arrows{padding:0 1.25rem}}
+@media(max-width:768px){.scroll-card{flex:0 0 240px}.scroll-track,.scroll-arrows{padding:0 1.25rem 0.5rem}}
 
 /* Services */
 .services{padding:4rem 2.5rem 6rem;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:4rem}
@@ -80,7 +109,7 @@ a{color:inherit;text-decoration:none}
 .cta{padding:6rem 2.5rem;text-align:center;max-width:700px;margin:0 auto}
 .cta h2{font-size:32px;font-weight:500;letter-spacing:-0.01em;line-height:1.1}
 .cta p{font-size:1rem;color:#666;margin-top:1rem;margin-bottom:2rem}
-.cta a{font-size:0.9rem;font-weight:500;border:1.5px solid #121212;padding:0.65rem 1.5rem;transition:all 0.2s}
+.cta a{font-size:0.9rem;font-weight:500;border:1.5px solid #121212;padding:0.65rem 1.5rem;border-radius:100px;transition:all 0.2s}
 .cta a:hover{background:#121212;color:#fff}
 
 /* Footer */
@@ -89,7 +118,6 @@ footer{padding:4rem 2.5rem;border-top:1px solid #e5e5e5;max-width:1400px;margin:
 footer h4{font-size:0.75rem;font-weight:500;color:#121212;margin-bottom:0.75rem}
 footer p,footer a{font-size:0.85rem;color:#666;display:block}
 footer a:hover{color:#121212}
-footer ul{list-style:none}
 footer ul li{margin-bottom:0.35rem}
 .footer-bot{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #e5e5e5;font-size:0.75rem;color:#999;display:flex;justify-content:space-between}
 @media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:2rem}.footer-bot{flex-direction:column;gap:0.5rem}.cta{padding:4rem 1.25rem}}
@@ -97,6 +125,42 @@ footer ul li{margin-bottom:0.35rem}
 </head>
 <body>
 
+<!-- Welcome moment -->
+<div class="welcome" id="welcome">
+  <span class="welcome-text">System Sound</span>
+</div>
+
+<!-- Menu overlay -->
+<div class="menu-overlay" id="menuOverlay">
+  <button class="menu-close" onclick="toggleMenu()">✕</button>
+  <div class="menu-content">
+    <div class="menu-pillars">
+      <a href="commercial-theatre" class="menu-pillar" onclick="toggleMenu()">
+        <span class="num">01</span>
+        <h4>Commercial Theatre</h4>
+        <p>Full-service audio for professional musical theatre — system design, equipment, crew, and ongoing support for productions of any scale.</p>
+      </a>
+      <a href="equipment" class="menu-pillar" onclick="toggleMenu()">
+        <span class="num">02</span>
+        <h4>Equipment Hire</h4>
+        <p>Premium inventory — Meyer Sound, DiGiCo, Sennheiser, Shure. Professionally maintained and prepared for each job.</p>
+      </a>
+      <a href="venue-installation" class="menu-pillar" onclick="toggleMenu()">
+        <span class="num">03</span>
+        <h4>Venue Installation</h4>
+        <p>Custom audio system design and permanent installation for theatres, churches, schools, and performance spaces.</p>
+      </a>
+    </div>
+    <div class="menu-grid">
+      <a href="commercial-theatre" onclick="toggleMenu()">Work</a>
+      <a href="about-us" onclick="toggleMenu()">About</a>
+      <a href="press-and-news" onclick="toggleMenu()">News</a>
+      <a href="location-and-contacts" onclick="toggleMenu()">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- Nav -->
 <div class="nav-wrap">
   <a href="." class="logo">System Sound</a>
   <div class="nav-links">
@@ -105,20 +169,27 @@ footer ul li{margin-bottom:0.35rem}
     <a href="equipment">Hire</a>
     <a href="location-and-contacts">Contact</a>
   </div>
-  <a href="sales-enquiry-request" class="nav-cta">Enquire</a>
+  <div style="display:flex;align-items:center;gap:0.75rem">
+    <a href="sales-enquiry-request" class="nav-cta">Enquire</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span>
+    </button>
+  </div>
 </div>
 
+<!-- Hero -->
 <section class="hero">
   <h1>Sound design and engineering for theatre, venues, and live performance.</h1>
   <p>Melbourne, Australia. Family-owned since 1979. Direct Meyer Sound distributor.</p>
 </section>
 
+<!-- Current projects carousel -->
 <div class="scroll-wrap">
   <div class="scroll-arrows">
-    <span style="font-size:0.75rem;color:#999;display:flex;align-items:center">Current projects</span>
-    <div style="display:flex;gap:0.5rem">
-    <button onclick="document.querySelector('.scroll-track').scrollBy({left:-300,behavior:'smooth'})">←</button>
-    <button onclick="document.querySelector('.scroll-track').scrollBy({left:300,behavior:'smooth'})">→</button>
+    <span class="label">Current projects</span>
+    <div class="scroll-btns">
+      <button onclick="document.querySelector('.scroll-track').scrollBy({left:-300,behavior:'smooth'})">←</button>
+      <button onclick="document.querySelector('.scroll-track').scrollBy({left:300,behavior:'smooth'})">→</button>
     </div>
   </div>
   <div class="scroll-track">
@@ -160,6 +231,7 @@ footer ul li{margin-bottom:0.35rem}
   </div>
 </div>
 
+<!-- Services -->
 <div class="section-wrap">
   <span class="section-label">Services</span>
 </div>
@@ -182,6 +254,7 @@ footer ul li{margin-bottom:0.35rem}
   </div>
 </div>
 
+<!-- Meyer -->
 <div class="split">
   <div>
     <span class="label">Meyer Sound</span>
@@ -193,6 +266,7 @@ footer ul li{margin-bottom:0.35rem}
   </div>
 </div>
 
+<!-- Equipment -->
 <div class="equip">
   <div class="section-wrap" style="padding:0;margin-bottom:2rem">
     <span class="section-label">Equipment</span>
@@ -209,6 +283,7 @@ footer ul li{margin-bottom:0.35rem}
   </div>
 </div>
 
+<!-- CTA -->
 <section class="cta">
   <h2>Let's work together.</h2>
   <p>Planning a production or upgrading a venue?</p>
@@ -247,6 +322,18 @@ footer ul li{margin-bottom:0.35rem}
     <span>&copy; System Sound Pty. Ltd.</span>
   </div>
 </footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('menuOverlay').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('active');
+  document.body.style.overflow = document.getElementById('menuOverlay').classList.contains('open') ? 'hidden' : '';
+}
+// Welcome moment — fade out after 1.5s
+setTimeout(function(){
+  document.getElementById('welcome').classList.add('hide');
+}, 1500);
+</script>
 
 </body>
 </html>
