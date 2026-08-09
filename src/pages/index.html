@@ -16,11 +16,11 @@ img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
 
-/* Welcome — dark intro that fades into the page */
-.welcome{position:fixed;inset:0;z-index:9999;background:#0a0a0a;display:flex;align-items:center;justify-content:center;pointer-events:none;transition:opacity 1.2s ease,visibility 1.2s ease}
-.welcome.hide{opacity:0;visibility:hidden}
-.welcome-text{color:rgba(255,255,255,0.6);font-size:1rem;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;animation:welcomePulse 3s ease-in-out infinite}
-@keyframes welcomePulse{0%,100%{opacity:0.3}50%{opacity:0.7}}
+/* Opening — brand video intro that fades into the page */
+.opening{position:fixed;inset:0;z-index:9999;background:#0a0a0a;display:flex;align-items:center;justify-content:center;pointer-events:none;transition:opacity 1s ease,visibility 1s ease}
+.opening.hide{opacity:0;visibility:hidden}
+.opening video{width:100%;height:100%;object-fit:cover}
+@media(max-width:768px){.opening video{object-fit:contain}}
 
 /* Nav */
 .nav-wrap{position:relative;z-index:100;padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}
@@ -125,9 +125,9 @@ footer ul li{margin-bottom:0.35rem}
 </head>
 <body>
 
-<!-- Welcome moment -->
-<div class="welcome" id="welcome">
-  <span class="welcome-text">System Sound</span>
+<!-- Opening brand video -->
+<div class="opening" id="opening">
+  <video id="openingVideo" src="images/brand-opening.mp4" muted playsinline preload="auto"></video>
 </div>
 
 <!-- Menu overlay -->
@@ -415,10 +415,18 @@ function toggleMenu(){
   document.getElementById('hamburger').classList.toggle('active');
   document.body.style.overflow = document.getElementById('menuOverlay').classList.contains('open') ? 'hidden' : '';
 }
-// Welcome moment — fade out after 1.5s
-setTimeout(function(){
-  document.getElementById('welcome').classList.add('hide');
-}, 1500);
+// Opening brand video — play once then fade
+const video = document.getElementById('openingVideo');
+video.play().then(function(){
+  video.addEventListener('ended', function(){
+    document.getElementById('opening').classList.add('hide');
+  });
+}).catch(function(){
+  // Fallback if autoplay blocked: show page after 2s
+  setTimeout(function(){
+    document.getElementById('opening').classList.add('hide');
+  }, 2000);
+});
 </script>
 
 </body>
