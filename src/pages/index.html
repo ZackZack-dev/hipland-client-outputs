@@ -42,15 +42,23 @@ section{padding:6rem 2.5rem}
 .services .num{font-size:0.65rem;font-weight:600;color:#999;letter-spacing:0.08em;margin-bottom:1rem;display:block}
 @media(max-width:768px){.services{grid-template-columns:1fr;gap:2rem}}
 
-/* Shows */
-.shows{padding:6rem 2.5rem;background:#fafafa}
-.shows-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:1400px;margin:2rem auto 0}
-.show-card{background:#fff;padding:1.25rem;border:1px solid #e5e5e5}
+/* Shows — horizontal scroll */
+.shows{padding:6rem 2.5rem;background:#fafafa;overflow:hidden}
+.shows-scroll{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding:0.5rem 0 1rem;margin-top:2rem;cursor:grab;max-width:1400px}
+.shows-scroll::-webkit-scrollbar{height:4px}
+.shows-scroll::-webkit-scrollbar-track{background:transparent}
+.shows-scroll::-webkit-scrollbar-thumb{background:#ccc;border-radius:2px}
+.shows-scroll:active{cursor:grabbing}
+.show-card{flex:0 0 340px;scroll-snap-align:start;background:#fff;padding:1rem;border:1px solid #e5e5e5;transition:border-color 0.3s}
+.show-card:hover{border-color:#999}
 .show-card img{width:100%;aspect-ratio:2/3;object-fit:cover;background:#eee}
-.show-card .meta{margin-top:1rem}
-.show-card .title{font-size:1rem;font-weight:600;letter-spacing:-0.02em}
-.show-card .venue{font-size:0.75rem;color:#999;margin-top:0.35rem;text-transform:uppercase;letter-spacing:0.06em}
-@media(max-width:768px){.shows-grid{grid-template-columns:1fr;max-width:400px}}
+.show-card .meta{margin-top:0.85rem}
+.show-card .title{font-size:0.95rem;font-weight:600;letter-spacing:-0.02em}
+.show-card .venue{font-size:0.7rem;color:#999;margin-top:0.3rem;text-transform:uppercase;letter-spacing:0.06em}
+.shows-arrows{display:flex;gap:0.75rem;align-items:center}
+.shows-arrows button{width:36px;height:36px;border:1px solid #ccc;background:#fff;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;transition:all 0.2s}
+.shows-arrows button:hover{border-color:#121212;color:#121212}
+@media(max-width:768px){.show-card{flex:0 0 280px}.shows-arrows{display:none}}
 
 /* Split */
 .split{padding:8rem 2.5rem;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:6rem;align-items:center}
@@ -130,29 +138,56 @@ footer ul li{margin-bottom:0.4rem}
 </section>
 
 <section class="shows">
-  <div class="section-head">
-    <span class="section-label">Current</span>
+  <div class="section-head" style="display:flex;justify-content:space-between;align-items:flex-end">
+    <div>
+      <span class="section-label">Current</span>
+    </div>
+    <div class="shows-arrows">
+      <button onclick="document.querySelector('.shows-scroll').scrollBy({left:-360,behavior:'smooth'})">←</button>
+      <button onclick="document.querySelector('.shows-scroll').scrollBy({left:360,behavior:'smooth'})">→</button>
+    </div>
   </div>
-  <div class="shows-grid">
+  <div class="shows-scroll">
     <div class="show-card">
-      <img src="images/book-of-mormon.jpg" alt="Book of Mormon" loading="lazy" />
+      <img src="images/bom-poster-resized.jpg" alt="Book of Mormon" loading="lazy" />
       <div class="meta">
         <div class="title">Book of Mormon</div>
-        <div class="venue">QPAC, Brisbane</div>
+        <div class="venue">QPAC, Brisbane &mdash; Now Playing</div>
       </div>
     </div>
     <div class="show-card">
-      <img src="images/production-01.jpg" alt="Death of a Salesman" loading="lazy" />
+      <img src="images/dos-poster.jpg" alt="Death of a Salesman" loading="lazy" />
       <div class="meta">
         <div class="title">Death of a Salesman</div>
-        <div class="venue">His Majesty's Theatre, Melbourne</div>
+        <div class="venue">Her Majesty's Theatre, Melbourne &mdash; Opens 11 Aug</div>
       </div>
     </div>
     <div class="show-card">
-      <img src="images/show-photo.jpg" alt="Clue" loading="lazy" />
+      <img src="images/production-01.jpg" alt="Clue" loading="lazy" />
       <div class="meta">
         <div class="title">Clue</div>
-        <div class="venue">Loreto Toorak, Melbourne</div>
+        <div class="venue">Loreto Toorak, Melbourne &mdash; August 2026</div>
+      </div>
+    </div>
+    <div class="show-card">
+      <img src="images/console-01.jpg" alt="Moulin Rouge" loading="lazy" />
+      <div class="meta">
+        <div class="title">Moulin Rouge</div>
+        <div class="venue">Melbourne &mdash; Past Season</div>
+      </div>
+    </div>
+    <div class="show-card">
+      <img src="images/book-of-mormon.jpg" alt="Sunset Boulevard" loading="lazy" />
+      <div class="meta">
+        <div class="title">Sunset Boulevard</div>
+        <div class="venue">Asia Tour &mdash; 2025</div>
+      </div>
+    </div>
+    <div class="show-card">
+      <img src="images/meyer-leopard.jpg" alt="Cats" loading="lazy" />
+      <div class="meta">
+        <div class="title">Cats</div>
+        <div class="venue">Melbourne &mdash; Past Season</div>
       </div>
     </div>
   </div>
