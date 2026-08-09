@@ -71,6 +71,34 @@ h1,h2,h3,h4,h5{font-weight:600;color:var(--white);line-height:1.15}
 .btn-base{background:var(--base);color:var(--black)}
 .btn-base:hover{filter:brightness(1.1);transform:translateY(-1px)}
 
+/* Current Productions Carousel */
+.current-productions{overflow:hidden}
+.productions-carousel{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding:0.5rem 0 1rem;cursor:grab}
+.productions-carousel::-webkit-scrollbar{height:6px}
+.productions-carousel::-webkit-scrollbar-track{background:rgba(255,255,255,0.03);border-radius:3px}
+.productions-carousel::-webkit-scrollbar-thumb{background:rgba(190,255,1,0.2);border-radius:3px}
+.productions-carousel::-webkit-scrollbar-thumb:hover{background:rgba(190,255,1,0.4)}
+.productions-carousel:active{cursor:grabbing}
+.production-card{flex:0 0 320px;scroll-snap-align:start;border-radius:10px;overflow:hidden;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);transition:all 0.3s;text-decoration:none;display:block}
+.production-card:hover{transform:translateY(-4px);border-color:rgba(190,255,1,0.25);box-shadow:0 12px 40px rgba(0,0,0,0.3)}
+.production-poster{aspect-ratio:2/3;overflow:hidden;position:relative}
+.production-poster img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.production-card:hover .production-poster img{transform:scale(1.06)}
+.production-poster .status-badge{position:absolute;top:1rem;right:1rem;background:var(--base);color:var(--black);font-size:0.65rem;font-weight:700;padding:0.25rem 0.75rem;border-radius:100px;text-transform:uppercase;letter-spacing:0.06em}
+.production-poster .status-badge.opening{background:var(--white);color:var(--dark)}
+.production-info{padding:1.25rem}
+.production-info .venue{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--base);margin-bottom:0.5rem}
+.production-info h4{font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:0.35rem;line-height:1.25}
+.production-info .dates{font-size:0.8rem;color:var(--gray)}
+.production-info .designer{font-size:0.75rem;color:var(--gray);margin-top:0.35rem}
+.carousel-nav{display:flex;align-items:center;gap:0.75rem}
+.carousel-arrow{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.03);color:var(--white);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;flex-shrink:0}
+.carousel-arrow:hover{border-color:var(--base);color:var(--base);background:rgba(190,255,1,0.05)}
+@media(max-width:768px){
+  .production-card{flex:0 0 260px}
+  .carousel-nav{display:none}
+}
+
 /* Services */
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
 .service-card{padding:2.5rem 2rem;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:8px;position:relative;transition:all 0.3s}
@@ -185,7 +213,7 @@ h1,h2,h3,h4,h5{font-weight:600;color:var(--white);line-height:1.15}
 <!-- Navigation -->
 <div class="nav-wrap">
   <div class="container nav">
-    <a href="/" class="nav-logo">System<span>Sound</span></a>
+    <a href="/" class="nav-logo"><img src="/images/logo.png" alt="System Sound" style="height:36px;width:auto;vertical-align:middle" /></a>
     <div class="nav-right">
       <div class="nav-links">
         <a href="/about-us">About</a>
@@ -218,6 +246,112 @@ h1,h2,h3,h4,h5{font-weight:600;color:var(--white);line-height:1.15}
     </div>
   </div>
 </section>
+
+<!-- Current Productions -->
+<section class="section current-productions">
+  <div class="container">
+    <div class="portfolio-header">
+      <div>
+        <span class="section-tag">Current</span>
+        <h2 class="section-title" style="margin-bottom:0">Now on stage</h2>
+      </div>
+      <div class="carousel-nav">
+        <button class="carousel-arrow" onclick="scrollCarousel('productions-carousel', -340)" aria-label="Scroll left">←</button>
+        <button class="carousel-arrow" onclick="scrollCarousel('productions-carousel', 340)" aria-label="Scroll right">→</button>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="max-width:100%;padding-left:0;padding-right:0">
+    <div class="productions-carousel" id="productions-carousel" style="padding-left:max(1.5rem,calc((100vw - 1320px) / 2));padding-right:max(1.5rem,calc((100vw - 1320px) / 2))">
+      
+      <a href="/commercial-theatre" class="production-card">
+        <div class="production-poster">
+          <img src="/images/book-of-mormon.jpg" alt="Book of Mormon" loading="lazy" />
+          <span class="status-badge">Now Playing</span>
+        </div>
+        <div class="production-info">
+          <span class="venue">QPAC — Brisbane</span>
+          <h4>Book of Mormon</h4>
+          <p class="dates">Now showing</p>
+          <p class="designer">Sound Design: David Greasley</p>
+        </div>
+      </a>
+
+      <a href="/commercial-theatre" class="production-card">
+        <div class="production-poster">
+          <img src="/images/production-01.jpg" alt="Death of a Salesman" loading="lazy" />
+          <span class="status-badge opening">Opens 13 Aug</span>
+        </div>
+        <div class="production-info">
+          <span class="venue">His Majesty's Theatre — Melbourne</span>
+          <h4>Death of a Salesman</h4>
+          <p class="dates">Opening 13 August 2026</p>
+          <p class="designer">Sound Design: Chris Pratt</p>
+        </div>
+      </a>
+
+      <a href="/schools" class="production-card">
+        <div class="production-poster">
+          <img src="/images/show-photo.jpg" alt="Clue" loading="lazy" />
+          <span class="status-badge opening">Now Playing</span>
+        </div>
+        <div class="production-info">
+          <span class="venue">Loreto Toorak — Melbourne</span>
+          <h4>Clue</h4>
+          <p class="dates">August 2026</p>
+          <p class="designer">System Sound crew</p>
+        </div>
+      </a>
+
+      <a href="/commercial-theatre" class="production-card">
+        <div class="production-poster">
+          <img src="/images/console-01.jpg" alt="Sunset Boulevard" loading="lazy" />
+          <span class="status-badge">Past Season</span>
+        </div>
+        <div class="production-info">
+          <span class="venue">Asia Tour</span>
+          <h4>Sunset Boulevard</h4>
+          <p class="dates">2025 Asia Tour</p>
+          <p class="designer">Sound Design: Dave Greasley</p>
+        </div>
+      </a>
+
+      <a href="/commercial-theatre" class="production-card">
+        <div class="production-poster">
+          <img src="/images/digico-console.jpg" alt="Moulin Rouge" loading="lazy" />
+          <span class="status-badge">Past Season</span>
+        </div>
+        <div class="production-info">
+          <span class="venue">Melbourne</span>
+          <h4>Moulin Rouge</h4>
+          <p class="dates">2025 Season</p>
+          <p class="designer">Sound Design: System Sound</p>
+        </div>
+      </a>
+
+      <a href="/commercial-theatre" class="production-card">
+        <div class="production-poster">
+          <img src="/images/meyer-leopard.jpg" alt="Cats" loading="lazy" />
+          <span class="status-badge">Past Season</span>
+        </div>
+        <div class="production-info">
+          <span class="venue">Melbourne</span>
+          <h4>Cats</h4>
+          <p class="dates">2025 Season</p>
+          <p class="designer">Sound Design: System Sound</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<script>
+function scrollCarousel(id, amount) {
+  const carousel = document.getElementById(id);
+  carousel.scrollBy({left: amount, behavior: 'smooth'});
+}
+</script>
 
 <!-- Services -->
 <section class="section">
@@ -268,56 +402,56 @@ h1,h2,h3,h4,h5{font-weight:600;color:var(--white);line-height:1.15}
     </div>
     <div class="portfolio-grid">
       <a href="/commercial-theatre" class="portfolio-card">
-        <img src="/images/console-hero.jpg" alt="Book of Mormon" loading="lazy" />
+        <img src="/images/book-of-mormon.jpg" alt="Book of Mormon" loading="lazy" />
         <div class="portfolio-overlay">
           <span class="cat">Musical Theatre</span>
           <span class="title">Book of Mormon</span>
         </div>
       </a>
       <a href="/commercial-theatre" class="portfolio-card">
-        <img src="/images/speaker-array.jpg" alt="Moulin Rouge" loading="lazy" />
+        <img src="/images/production-01.jpg" alt="Moulin Rouge" loading="lazy" />
         <div class="portfolio-overlay">
           <span class="cat">Musical Theatre</span>
           <span class="title">Moulin Rouge</span>
         </div>
       </a>
       <a href="/commercial-theatre" class="portfolio-card">
-        <img src="/images/studio-monitor.jpg" alt="Sunset Boulevard" loading="lazy" />
+        <img src="/images/console-01.jpg" alt="Sunset Boulevard" loading="lazy" />
         <div class="portfolio-overlay">
           <span class="cat">Musical Theatre</span>
           <span class="title">Sunset Boulevard</span>
         </div>
       </a>
       <a href="/commercial-theatre" class="portfolio-card">
-        <img src="/images/backstage.jpg" alt="Cats" loading="lazy" />
+        <img src="/images/meyer-leopard.jpg" alt="Cats" loading="lazy" />
         <div class="portfolio-overlay">
           <span class="cat">Musical Theatre</span>
           <span class="title">Cats</span>
         </div>
       </a>
       <a href="/schools" class="portfolio-card">
-        <img src="/images/console-hero.jpg" alt="School Productions" loading="lazy" />
+        <img src="/images/digico-console.jpg" alt="School Productions" loading="lazy" />
         <div class="portfolio-overlay">
           <span class="cat">Education</span>
           <span class="title">School Productions</span>
         </div>
       </a>
       <a href="/venue-installation" class="portfolio-card">
-        <img src="/images/speaker-array.jpg" alt="Venue Installs" loading="lazy" />
+        <img src="/images/sennheiser-rack.jpg" alt="Venue Installs" loading="lazy" />
         <div class="portfolio-overlay">
           <span class="cat">Installation</span>
           <span class="title">Venue Installs</span>
         </div>
       </a>
       <a href="/equipment" class="portfolio-card">
-        <img src="/images/studio-monitor.jpg" alt="Equipment Hire" loading="lazy" />
+        <img src="/images/sennheiser-6000.jpg" alt="Equipment Hire" loading="lazy" />
         <div class="portfolio-overlay">
           <span class="cat">Hire</span>
           <span class="title">Equipment Hire</span>
         </div>
       </a>
       <a href="/meyer-sound-sales" class="portfolio-card">
-        <img src="/images/backstage.jpg" alt="Meyer Sound" loading="lazy" />
+        <img src="/images/la4x-front.png" alt="Meyer Sound" loading="lazy" />
         <div class="portfolio-overlay">
           <span class="cat">Distribution</span>
           <span class="title">Meyer Sound Sales</span>
@@ -402,7 +536,7 @@ h1,h2,h3,h4,h5{font-weight:600;color:var(--white);line-height:1.15}
     </div>
     <div class="news-grid">
       <a href="/case-studies" class="news-card">
-        <div class="news-card-img"><img src="/images/console-hero.jpg" alt="Book of Mormon" loading="lazy" /></div>
+        <div class="news-card-img"><img src="/images/book-of-mormon.jpg" alt="Book of Mormon" loading="lazy" /></div>
         <div class="news-card-body">
           <span class="cat">Production</span>
           <div class="date">August 2026</div>
@@ -410,7 +544,7 @@ h1,h2,h3,h4,h5{font-weight:600;color:var(--white);line-height:1.15}
         </div>
       </a>
       <a href="/press-and-news" class="news-card">
-        <div class="news-card-img"><img src="/images/speaker-array.jpg" alt="Meyer Sound" loading="lazy" /></div>
+        <div class="news-card-img"><img src="/images/meyer-leopard.jpg" alt="Meyer Sound" loading="lazy" /></div>
         <div class="news-card-body">
           <span class="cat">Equipment</span>
           <div class="date">July 2026</div>
@@ -418,7 +552,7 @@ h1,h2,h3,h4,h5{font-weight:600;color:var(--white);line-height:1.15}
         </div>
       </a>
       <a href="/press-and-news" class="news-card">
-        <div class="news-card-img"><img src="/images/studio-monitor.jpg" alt="Schools" loading="lazy" /></div>
+        <div class="news-card-img"><img src="/images/production-01.jpg" alt="Schools" loading="lazy" /></div>
         <div class="news-card-body">
           <span class="cat">Education</span>
           <div class="date">June 2026</div>
@@ -426,7 +560,7 @@ h1,h2,h3,h4,h5{font-weight:600;color:var(--white);line-height:1.15}
         </div>
       </a>
       <a href="/press-and-news" class="news-card">
-        <div class="news-card-img"><img src="/images/backstage.jpg" alt="Installation" loading="lazy" /></div>
+        <div class="news-card-img"><img src="/images/console-01.jpg" alt="Installation" loading="lazy" /></div>
         <div class="news-card-body">
           <span class="cat">Installation</span>
           <div class="date">May 2026</div>
@@ -451,7 +585,7 @@ h1,h2,h3,h4,h5{font-weight:600;color:var(--white);line-height:1.15}
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a href="/" class="nav-logo" style="display:inline-block;margin-bottom:1.5rem">System<span>Sound</span></a>
+        <a href="/" class="nav-logo" style="display:inline-block;margin-bottom:1.5rem"><img src="/images/logo.png" alt="System Sound" style="height:32px;width:auto" /></a>
         <div class="footer-loc">
           <div class="name">System Sound — Melbourne</div>
           <div class="addr">5 Westside Avenue, Port Melbourne VIC 3207, Australia</div>
