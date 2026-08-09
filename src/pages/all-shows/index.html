@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>All Productions — System Sound</title>
+<base href="/hipland-client-outputs/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',system-ui,sans-serif;color:#121212;background:#fff;line-height:1.5;font-weight:400;letter-spacing:-0.01em}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+
+/* Nav */
+.nav-wrap{position:relative;z-index:100;padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}
+.logo{font-size:1.25rem;font-weight:500;letter-spacing:-0.01em}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:1rem;font-weight:400;color:#121212;transition:opacity 0.2s}
+.nav-links a:hover{opacity:0.5}
+.nav-cta{font-size:1rem;font-weight:500;border:1.5px solid #121212;padding:0.5rem 1.25rem;border-radius:100px;transition:all 0.2s}
+.nav-cta:hover{background:#121212;color:#fff;opacity:1}
+@media(max-width:768px){.nav-wrap{padding:1.25rem}.nav-links{display:none}}
+
+/* Page header */
+.page-header{max-width:1400px;margin:0 auto;padding:6rem 2.5rem 3rem}
+.page-header h1{font-size:clamp(28px,4vw,48px);font-weight:500;letter-spacing:-0.01em;line-height:1.1}
+.page-header p{font-size:1rem;color:#666;max-width:500px;margin-top:1rem;line-height:1.55}
+@media(max-width:768px){.page-header{padding:4rem 1.25rem 2rem}}
+
+/* Mosaic grid */
+.mosaic{max-width:1600px;margin:0 auto;padding:0 2.5rem 6rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem}
+.mosaic-card{position:relative;overflow:hidden;border-radius:2px;aspect-ratio:2/3;background:#f5f5f5;transition:transform 0.3s ease,box-shadow 0.3s ease}
+.mosaic-card img{width:100%;height:100%;object-fit:cover;transition:transform 0.35s ease,opacity 0.35s ease}
+.mosaic-card:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,0.12)}
+.mosaic-card:hover img{transform:scale(1.03)}
+.mosaic-card .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 40%);display:flex;align-items:flex-end;padding:1.25rem;opacity:0;transition:opacity 0.35s ease}
+.mosaic-card:hover .overlay{opacity:1}
+.mosaic-card .overlay span{color:#fff;font-size:0.95rem;font-weight:500;letter-spacing:-0.01em}
+@media(max-width:768px){.mosaic{padding:0 1.25rem 4rem;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem}.mosaic-card .overlay{opacity:1;background:linear-gradient(to top,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 60%)}}
+
+/* Footer */
+footer{padding:4rem 2.5rem;border-top:1px solid #e5e5e5;max-width:1400px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem}
+footer h4{font-size:0.75rem;font-weight:500;color:#121212;margin-bottom:0.75rem}
+footer p,footer a{font-size:0.85rem;color:#666;display:block}
+footer a:hover{color:#121212}
+footer ul li{margin-bottom:0.35rem}
+.footer-bot{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #e5e5e5;font-size:0.75rem;color:#999;display:flex;justify-content:space-between}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:2rem}.footer-bot{flex-direction:column;gap:0.5rem}}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<div class="nav-wrap">
+  <a href="." class="logo">System Sound</a>
+  <div class="nav-links">
+    <a href="about-us">About</a>
+    <a href="commercial-theatre">Work</a>
+    <a href="equipment">Hire</a>
+    <a href="location-and-contacts">Contact</a>
+  </div>
+  <a href="sales-enquiry-request" class="nav-cta">Enquire</a>
+</div>
+
+<!-- Header -->
+<header class="page-header">
+  <h1>Every production, one place.</h1>
+  <p>A visual archive of the shows System Sound has helped bring to life since 1979.</p>
+</header>
+
+<!-- Mosaic of all shows -->
+<div class="mosaic">
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/wicked-poster.jpg" alt="Wicked" loading="lazy" />
+    <div class="overlay"><span>Wicked</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/evita-poster.jpg" alt="Evita" loading="lazy" />
+    <div class="overlay"><span>Evita</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/school-of-rock-poster.jpg" alt="School of Rock" loading="lazy" />
+    <div class="overlay"><span>School of Rock</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/phantom-poster.jpg" alt="The Phantom of the Opera" loading="lazy" />
+    <div class="overlay"><span>The Phantom of the Opera</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/les-mis-poster.png" alt="Les Misérables" loading="lazy" />
+    <div class="overlay"><span>Les Misérables</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/legally-blonde-poster.jpg" alt="Legally Blonde" loading="lazy" />
+    <div class="overlay"><span>Legally Blonde</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/chicago-poster.jpg" alt="Chicago" loading="lazy" />
+    <div class="overlay"><span>Chicago</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/mamma-mia-poster.jpg" alt="Mamma Mia" loading="lazy" />
+    <div class="overlay"><span>Mamma Mia</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/matilda-poster.jpg" alt="Matilda" loading="lazy" />
+    <div class="overlay"><span>Matilda</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/kinky-boots-poster.jpg" alt="Kinky Boots" loading="lazy" />
+    <div class="overlay"><span>Kinky Boots</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/cats-official-poster.jpg" alt="Cats" loading="lazy" />
+    <div class="overlay"><span>Cats</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/bom-official-poster.jpg" alt="The Book of Mormon" loading="lazy" />
+    <div class="overlay"><span>The Book of Mormon</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/mr-official-poster.jpg" alt="Moulin Rouge" loading="lazy" />
+    <div class="overlay"><span>Moulin Rouge</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/sb-official-poster.jpg" alt="Sunset Boulevard" loading="lazy" />
+    <div class="overlay"><span>Sunset Boulevard</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/dos-official-poster.jpg" alt="Death of a Salesman" loading="lazy" />
+    <div class="overlay"><span>Death of a Salesman</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/fiddler-poster.jpg" alt="Fiddler on the Roof" loading="lazy" />
+    <div class="overlay"><span>Fiddler on the Roof</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/we-will-rock-you-poster.jpg" alt="We Will Rock You" loading="lazy" />
+    <div class="overlay"><span>We Will Rock You</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/jersey-boys-poster.jpg" alt="Jersey Boys" loading="lazy" />
+    <div class="overlay"><span>Jersey Boys</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/miss-saigon-poster.jpg" alt="Miss Saigon" loading="lazy" />
+    <div class="overlay"><span>Miss Saigon</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/king-kong-poster.jpg" alt="King Kong" loading="lazy" />
+    <div class="overlay"><span>King Kong</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/chitty-poster.jpg" alt="Chitty Chitty Bang Bang" loading="lazy" />
+    <div class="overlay"><span>Chitty Chitty Bang Bang</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/billy-elliot-poster.jpg" alt="Billy Elliot" loading="lazy" />
+    <div class="overlay"><span>Billy Elliot</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/addams-family-poster.jpg" alt="The Addams Family" loading="lazy" />
+    <div class="overlay"><span>The Addams Family</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/love-never-dies-poster.jpg" alt="Love Never Dies" loading="lazy" />
+    <div class="overlay"><span>Love Never Dies</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/strictly-ballroom-poster.jpg" alt="Strictly Ballroom" loading="lazy" />
+    <div class="overlay"><span>Strictly Ballroom</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/war-horse-poster.jpg" alt="War Horse" loading="lazy" />
+    <div class="overlay"><span>War Horse</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/american-idiot-poster.png" alt="American Idiot" loading="lazy" />
+    <div class="overlay"><span>American Idiot</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/chorus-line-poster.jpg" alt="A Chorus Line" loading="lazy" />
+    <div class="overlay"><span>A Chorus Line</span></div>
+  </a>
+  <a href="case-studies" class="mosaic-card">
+    <img src="images/rock-of-ages-poster.jpg" alt="Rock of Ages" loading="lazy" />
+    <div class="overlay"><span>Rock of Ages</span></div>
+  </a>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>System Sound</h4>
+      <p>5 Westside Avenue, Port Melbourne<br>VIC 3207, Australia</p>
+      <p style="margin-top:0.75rem"><a href="mailto:info@systemsound.com.au">info@systemsound.com.au</a></p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="commercial-theatre">Commercial Theatre</a></li>
+        <li><a href="equipment">Equipment Hire</a></li>
+        <li><a href="venue-installation">Venue Installation</a></li>
+        <li><a href="meyer-sound-sales">Meyer Sound</a></li>
+        <li><a href="schools">Schools</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about-us">About</a></li>
+        <li><a href="case-studies">Case Studies</a></li>
+        <li><a href="press-and-news">News</a></li>
+        <li><a href="location-and-contacts">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <span>Australian owned since 1979</span>
+    <span>&copy; System Sound Pty. Ltd.</span>
+  </div>
+</footer>
+
+</body>
+</html>
